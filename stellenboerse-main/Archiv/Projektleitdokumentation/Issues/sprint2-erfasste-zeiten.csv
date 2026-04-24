@@ -1,0 +1,434 @@
+Title,Description,Issue ID,URL,State,Author,Author Username,Assignee,Assignee Username,Confidential,Locked,Due Date,Created At (UTC),Updated At (UTC),Closed At (UTC),Milestone,Weight,Labels,Time Estimate,Time Spent,Epic ID,Epic Title
+CI/CD Pipeline Basis erstellen,"Als Team möchten wir, dass unser Code automatisiert gebaut und getestet wird. Später auch ein Release zum Kunden automatisiert abläuft. Bevor wir aber soweit kommen, sollte eine solide Basis stehen auf der aufgebaut werden kann, bzw. dass das entsprechende Wissen zum Aufbau solcher Anforderungen später vorhanden ist.
+
+Dazu nutzen wir die vorhandenen Ressourcen von GitLab.
+
+Erstmalig soll es eine Basis Pipeline erstellt werden, die keine Funktion erfüllt und nur zum expermentieren und testen der Funktionalitäten dient. Das Ziel dieser Pipeline ist das generelle nutzen/einbinden eines Runners/Agents und das einbinden eines Docker Containers.
+
+Die Erkenntnisse soll kurz in einem neu Angelegten DevOps Oberverzeichnis festgehalten werden.
+
+Akzeptanzkriterien:
+- es gibt eine Pipeline die einen Runner nutzt um Hello World in einem Docker Container auszugeben
+- der Runner kommt vom HTWK GitLab (also kein eigens gehosteter)
+- Wiki Seite unter DevOps die wichtige Erkentnisse zusammenfasst",21,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/21,Closed,Vladislav Antonov,vladislav.antonov,Louis Westerheide,louis.westerheide,No,No,,2024-04-27 06:55:34,2024-06-14 08:17:08,2024-06-14 08:17:08,Abgabe 2,8,"Team::DevOps,User Story",0,25200,,
+Vorbereiten einer Hello World Pipeline mit gehosteten Runner von HTWK.,,22,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/22,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-04-27 06:58:32,2024-06-14 05:37:42,2024-06-14 05:37:42,Abgabe 2,,,0,0,,
+Helmholtz-Zentrum für Umweltforschung GmbH - UFZ,,43,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/43,Closed,Max Mager,max.mager,"Thorben Dirk Stehling, Max Mager","thorben_dirk.stehling, max.mager",No,No,,2024-05-02 15:34:09,2024-05-28 13:43:02,2024-05-28 13:41:28,Abgabe 2,,,0,1200,,
+Node.js Projekt aufsetzen,"Als Team brauchen wir ein Serverseitiges Basis Projekt, um weitere Features auf dieser Basis zu entwickeln.
+
+Dazu wurde bereits entschieden, das Node.js die passende Wahl ist. Mit Node.js soll also ein Projekt aufgesetzt werden. Dieses soll Typescript eingebunden haben. Sprich das Typescript direkt angewendet werden könnte und dementpsrechend installiert ist. Es soll eine übersichtliche und gut erwetierbare Verzeichnisstruktur im Node Projekt aufgebaut werden, auf der künftige Logik passend unterteilt werden kann. Ebenso müssen Verzeichnisstrukturen im Repo zu diesem Projekt erstellt werden.
+
+Akzeptanzkriterien:
+- es wurde ein Node.js Projekt aufgesetzt
+- dieses Projekt hat direkt Typescript eingebunden
+- die tsconfig.json ist sinnvoll
+- eine entsprechende gitignore File liegt vor
+- Node Projekt besitzt eine geeignte Verzeichnisstruktur
+- Repo hat passende Verzeichnisstruktur für neues Node Projekt und künftige Abzweige",65,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/65,Closed,Vladislav Antonov,vladislav.antonov,Vladislav Antonov,vladislav.antonov,No,No,,2024-05-17 13:31:01,2024-06-14 08:18:02,2024-06-14 08:18:02,Abgabe 2,5,"Team::BackEnd,User Story",0,14400,,
+React aufsetzen,"Als Team möchten wir ein aufgesetztes React Projekt, um mit der Entwicklung zu starten.
+
+Akzeptanz Kriterien:
+
+- es wurde ein React Projekt aufgesetzt
+- das Projekt hat Typescript eingebunden
+- Alle notwendigen TypeScript-Abhängigkeiten (z.B. typescript, @types/react, @types/node) sind installiert.
+
+- die tsconfig.json ist sinnvoll und identisch zu der im Node Projekt
+- die gitnore Datei wurde aktualisiert, um nur relevante Dateien ins Repo einzuchecken. 
+- Das Projekt hat eine sinnvolle Struktur und ist sinnvoll in das gesamte Repo eingebunden.
+- es ist festgehalten, welche schritte durch andere Entwickelnde durchgeführt werden müssen, um den gleichen lokalen stand zu bekommen.
+- Tailwind CSS ist eingebunden",81,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/81,Closed,Max Mager,max.mager,Dominique Fischer,dominique.fischer,No,No,,2024-05-18 13:48:31,2024-06-14 08:17:14,2024-06-14 08:17:14,Abgabe 2,5,"Team::FrontEnd,User Story",0,25500,,
+Jobs als Liste anzeigen,"Als Jobsuchender möchte ich auf dem Jobportal durch die Jobs scrollen, um eine Übersicht der Jobs zu bekommen.
+
+Akzeptanz Kriterien:
+- Liste ist Scrollbar
+- entspricht dem LSN Design (liegt im Discord Chanel Frontend)
+- Es wird der Titel dargestellt
+- Sie sind anklickbar, zurzeit ist aber ein Dummy link hinterlegt
+- zur ersten Darstellung liegen mehre Jobs statisch vor (sie müssen nicht aus dem Backend kommen)
+
+### Testfälle:
+- [x] Die Seite wird mit dem LSN Design verglichen, ob sie diesem entspricht.
+- [x] Man kann die Liste durch scrollen
+- [x] Der Titel der Jobs wird angezeigt
+- [x] Alle Jobs sind anklickbar",82,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/82,Closed,Max Mager,max.mager,Lam Nguyen,lam.nguyen,No,No,,2024-05-18 13:50:29,2024-06-14 08:17:13,2024-06-14 08:17:13,Abgabe 2,3,"Team::FrontEnd,User Story",0,28800,,
+After-Work Treffen,"Als Team möchten wir uns näher kennenlernen um besser als eine Einheit zu fungieren. Dazu wollen wir ein Treffen veranstalten, zum Teambuilding.
+
+Es gab bereits verschiedene Ideen wie:
+Grillen, Bowling, Spieleabend, Wandern ...
+
+Es soll herausgefunden werden, wann die meisten können und welche Aktivität den meisten zusagt. Hierzu könnte eine Umfrage hilfreich sein (z.B. https://forms.office.com/).
+
+Sobald Wann und Was klarsteht, soll auch entsprechender Ort, also Wo, geklärt werden. Im Idealfall Zentral für alle innerhalb Leipzigs. Sofern Reservierung notwendig, soll dies auch getan werden. 
+
+Akzeptanzkriterien:
+- das WANN fällt auf keinen Scrum Termin wie Sprint Planung, Retro, Sprint Review (siehe Opal Kalender)
+- sagt den meisten zu (WANN und WAS)
+- innerhalb Leipzigs (WO)
+- Reservierung getätigt sofern notwendig
+- Ergebnis der Planung soll Team mitgeteilt werden",83,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/83,Closed,Vladislav Antonov,vladislav.antonov,Lam Nguyen,lam.nguyen,No,No,,2024-05-18 15:07:33,2024-06-14 08:17:10,2024-06-14 08:17:10,Abgabe 2,3,Spike,0,7200,,
+Test Vorbereitungen,"Als Team brauchen wir eine Qualitätssicherung, um eine gute Qualität der Software sicherzustellen. Da wir aber noch am Anfang stehen, soll sich die Zeit genommen werden, sich ausreichend zu informieren, welche Technologien dafür benötigt werden und sich in diese einzuarbeiten. Dazu zählen unter anderem Sonarqube, Linter, Test-Frameworks und evtl. weitere. 
+
+Akzeptanzkriterien:
+- herausfinden welche Technologien benötigt werden bzw. passend sind
+- falls möglich bereits in Projekt einbauen und testen
+- in diese einarbeiten bis Basics klar sind
+- im Wiki dokumentiert/festgehalten
+- Es wurden Regln in Absprache mit dem Team erstellt, bsp für Linter",86,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/86,Closed,Vladislav Antonov,vladislav.antonov,Junyu Guo,junyu.guo,No,No,,2024-05-18 19:25:06,2024-06-14 08:17:16,2024-06-14 08:17:16,Abgabe 2,8,"Spike,Team::QA",0,21600,,
+Templates für Issue Labels vorbereiten,"Als Team wollen wir manuelle Arbeit möglichst reduzieren um effizienter zu arbeiten. Deshalb wäre es gut, wenn wir nicht für jedes Issue die Struktur jedes mal neu erstellen müssen in der Description. Dies wurde ein konsistentes Beschreibungsfeld umsetzen und so wird nie was vergessen. Es soll sich deshalb informiert werden, für welche issue Types welche Struktur am besten ist, sowie auch direkt die Templates für diese Beschreibungen umgesetzt werden. Siehe auch: https://docs.gitlab.com/ee/user/project/description_templates.html
+
+Akzeptanzkriterien:
+- es wurde sich informiert welche Struktur am besten für die Issues bug, defect, technical debt, user story und spike ist
+- es wurden templates erstellt für die genannten Issues Types
+- die Templates sind deutsch gehalten",87,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/87,Closed,Vladislav Antonov,vladislav.antonov,Louis Westerheide,louis.westerheide,No,No,,2024-05-18 19:58:46,2024-06-06 16:37:44,2024-06-02 18:13:12,Abgabe 2,3,"Team::DevOps,User Story",0,6300,,
+Daten aus dem Backend empfangen,"Als Nutzer des Jobportals möchte ich, dass die Jobangebote nicht mehr statisch angezeigt werden, sondern dynamisch aus dem Backend geladen werden, damit ich stets aktuelle Informationen erhalte und die Übersicht immer auf dem neuesten Stand ist.
+
+Akzeptanzkriterien:
+- Beim Aufrufen der Jobseite werden die Jobangebote dynamisch aus dem Backend geladen. (Tipp [axios](https://axios-http.com/docs/intro))
+- Die geladenen Jobdaten werden korrekt und vollständig angezeigt.
+- Jeder Job enthält mindestens den Jobtitel
+- Es gibt eine Fallback-Anzeige (z.B. Fehlermeldung oder leere Anzeige) für den Fall, dass keine Daten geladen werden können.
+
+### Testfälle
+- [x] Alle Jobs aus der Datenbank werden angezeigt.
+- [x] Datenbank wird leer gemacht, nichts wird angezeigt.
+- [x] API ausschalten und Fehler erzeugen, dieser sollte behandelt werden.",88,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/88,Closed,Max Mager,max.mager,Dominique Fischer,dominique.fischer,No,No,,2024-05-19 07:37:31,2024-06-14 05:08:34,2024-06-14 05:08:33,Abgabe 2,8,"Team::FrontEnd,User Story",0,28800,,
+Zugriff auf die Datenbank im Backend,"Als Entwickler des Backend-Systems möchte ich, dass das Backend auf die Datenbank zugreifen kann, um Daten zu speichern, abzurufen, zu aktualisieren und zu löschen, damit die Anwendung voll funktionsfähig und datengetrieben ist.
+
+Akzeptanzkriterien:
+- Das Backend kann Datenbank kommunizieren.
+- Die Verbindungskonfiguration (z.B. Datenbank-URL, Benutzername, Passwort) ist sicher gespeichert und leicht zugänglich.
+- Das Backend kann Create-, Read-, Update- und Delete-Operationen (CRUD) auf die Datenbank ausführen.
+- Das Datenmodell ist definiert und reflektiert die Struktur der Datenbank.
+- Sicherheitsmaßnahmen wie SQL-Injectionschutz und Zugriffskontrollen sind implementiert.
+
+Testfälle:
+- [x] Zugangs Daten für die Datenbank liegen in der .env vor.
+- [x] Die Migrationen funktionieren noch.",89,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/89,Closed,Max Mager,max.mager,Batbuyan Buyandelger,batbuyan.buyandelger,No,No,,2024-05-19 07:42:15,2024-06-14 05:08:29,2024-06-14 05:08:29,Abgabe 2,13,"Team::BackEnd,User Story",0,48600,,
+Bereitstellung von Daten aus der Datenbank für das Frontend,"Als Nutzer der Anwendung möchte ich, dass die Daten, die im Backend in der Datenbank gespeichert sind, über eine API dem Frontend zur Verfügung gestellt werden, damit ich aktuelle und relevante Informationen angezeigt bekomme.
+
+Akzeptanzkriterien:
+- Es existiert ein API-Endpunkt im Backend, der alle Stellen aus der Datenbank abrufen und an das Frontend weitergeben kann.
+- Der API-Endpunkt ist klar dokumentiert und beschreibt die verfügbaren Daten sowie die erwarteten Antworten.
+
+- [x] Alle API Routen werden abgefragt (über Browser unter localhost:3000/Route/Der/API) 
+- [x] /api/jobs
+- [x] /api/jobs/:jobid (Doppelpunkt gibt an, das Daten mit geschickt werden können. Also hier aufruf über: localhost:3000/Route/Der/API:JOBID)
+- [x] /api/employer/:empid
+- [x] /api/location/:locationid",90,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/90,Closed,Max Mager,max.mager,Batbuyan Buyandelger,batbuyan.buyandelger,No,No,,2024-05-19 08:06:14,2024-06-14 05:08:30,2024-06-14 05:08:30,Abgabe 2,8,"Team::BackEnd,User Story",0,18000,,
+Erstellung einer Datenbank,"Als Entwickler möchte ich eine Datenbank erstellen, damit Daten sicher und effizient gespeichert, abgerufen, aktualisiert und gelöscht werden können.
+
+Akzeptanzkriterien:
+- Ein vollständiges und gut durchdachtes Datenbankschema ist entworfen, das alle benötigten Tabellen, Spalten und Beziehungen enthält, die für den MVP benötigt werden.
+- Das Schema berücksichtigt die Normalisierung der Daten, um Redundanz zu minimieren und Datenintegrität zu gewährleisten.
+- Es gibt Scripte, damit jeder Entwickler die Datenbank bei sich lokal einfach aufsetzten kann.",91,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/91,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-05-19 08:15:53,2024-06-14 08:17:26,2024-06-14 08:17:26,Abgabe 2,8,"Team::BackEnd,User Story",0,61200,,
+Erster Fortschritt beim Webcrawler,"Als Entwickler möchte ich einen ersten Fortschritt beim Webcrawler erreichen, indem ich in der Lage bin, eine erste Webseite erfolgreich aufzurufen und ihren Inhalt zu analysieren.
+
+Akzeptanzkriterien:
+
+- Der Webcrawler ist in der Lage, eine Webseite über ihre URL aufzurufen.
+- Vor dem Abrufen einer Webseite wird geprüft, ob der Zugriff auf der Webseite gemäß der robots.txt-Datei erlaubt ist.
+- Webcrawler bekommt HTML Inhalt der Seite zur Verarbeitung.
+- Webcrawler bekommt ETag zur Verarbeitung.
+
+#### Testfälle
+
+* [x] Testfall 1.1: Der Webcrawler ruft die Seite MIT einen ETag-Header auf (z.B. https://example.com) 
+* [x] Testfall 1.2: Der Webcrawler ruft die Seite OHNE ETag-Header auf (z.B. https://www.google.com)
+* [x] Testfall 2.1: Zugriff auf der Webseite ist gemäß robots.txt erlaubt: Der Webcrawler ruft die Seite auf. 
+* [x] Testfall 2.2: Zugriff auf der Webseite ist gemäß robots.txt NICHT erlaubt: Der Webcrawler ruft die Seite NICHT auf.
+* [x] Testfall 3.1: Der Webcrawler liefert den HTML-Inhalt aus 1.1 und 1.2 zurück. 
+* [x] Testfall: 3.2: Der HTML-Inhalt aus 1.1 und 1.2 wird zur weiteren Analyse bereitgestellt. 
+* [x] Testfall 3.3: Fehler beim Abrufen werden korrekt abgefangen und behandelt.
+* [x] Testfall 4.1: URL mit ETag (aus 1.1): Der Webcrawler erhält den ETag und stellt diese zur Verarbeitung bereit (z.B. https://example.com, etag: ""3147526947"") 
+* [x] Testfall 4.2: URL ohne ETag (aus 1.2): Der Webcrawler verarbeitet die Seite ohne ETag, behandelt aber alle anderen Header-Informationen korrekt.",92,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/92,Closed,Max Mager,max.mager,Thorben Dirk Stehling,thorben_dirk.stehling,No,No,,2024-05-19 08:23:22,2024-06-14 08:17:19,2024-06-14 08:17:19,Abgabe 2,8,"Team::BackEnd,User Story",0,24300,,
+ETag-Auswertungsfunktion für Änderungsvergleich,"Als Entwickler möchte ich eine Funktion implementieren, die den ETag (Entity Tag) einer Ressource auswertet und feststellt, ob sich die Ressource seit dem letzten Aufruf geändert hat. Dadurch kann ich effizient feststellen, ob eine Ressource aktualisiert wurde und ob eine erneute Verarbeitung erforderlich ist.
+
+Akzeptanzkriterien:
+
+- Die Funktion ist in der Lage, den ETag-Wert einer Ressource auszuwerten und zu extrahieren.
+- Die Funktion vergleicht den aktuellen ETag-Wert mit dem zuvor gespeicherten ETag-Wert der Ressource.
+- Sie stellt fest, ob sich der ETag-Wert seit dem letzten Aufruf geändert hat.
+- Die Funktion markiert die Ressource als geändert und signalisiert, dass eine erneute Verarbeitung erforderlich ist.
+- Wenn der ETag-Wert unverändert ist, wird festgestellt, dass keine Änderungen an der Ressource vorliegen. Die Funktion signalisiert, dass keine erneute Verarbeitung erforderlich ist.
+- Die Funktion berücksichtigt mögliche Fehlerzustände, z.B. wenn der ETag-Wert nicht verfügbar ist oder die Analyse fehlschlägt.
+
+### Testfälle:
+
+* [x] Vorbereitung mit Testdaten:
+  1. Webseite A: Ohne ETag. 
+  2. Webseite B: Mit ETag, keine Änderung seit dem letzten Aufruf. 
+  3. Webseite C: Mit ETag, Änderung seit dem letzten Aufruf.
+* [x] Testfall 1.1: Nach dem Vergleich des ETag-Werts von Webseite B: Erwartetes Ergebnis: Webseite B ist nicht als geändert markiert und es wird signalisiert, dass keine erneute Verarbeitung erforderlich ist. 
+* [x] Testfall 1.2: Nach dem Vergleich des ETag-Werts von Webseite C: Erwartetes Ergebnis: Webseite C ist als geändert markiert und es wird signalisiert, dass eine erneute Verarbeitung erforderlich ist.
+* [x] Testfall 2.1: Verarbeitung von Webseite A ohne ETag: Erwartetes Ergebnis: Die Webseite wird korrekt behandelt, indem der Entwickler eine eigene Logik implementiert und die Behandlung nachweist. Z.B. durch Loggen des Fehlers, Fortsetzung der Verarbeitung ohne ETag-Berücksichtigung oder Signalisierung, dass eine Behandlung erforderlich ist, da kein ETag vorhanden ist.",93,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/93,Closed,Max Mager,max.mager,Robert Hobelsberger,robert.hobelsberger,No,No,,2024-05-19 08:28:22,2024-06-14 05:08:27,2024-06-14 05:08:27,Abgabe 2,8,"Team::BackEnd,User Story",0,101700,,
+Jobtitelabruf über die OpenAI API,"Als Entwickler möchte ich die Möglichkeit haben, den Titel einer HTML-Seite an die OpenAI API zu senden und den zurückgegebenen Titel zu erhalten. Dadurch können wir den Titel von Webseiten automatisch extrahieren und für weitere Verarbeitungsschritte verwenden.
+
+Akzeptanzkriterien:
+- Das Main-Element der HTML-Seite wird erfolgreich extrahiert und als Textinhalt zur Verfügung gestellt.
+- Es werden Mechanismen zur Entfernung von HTML-Tags und zur Reinigung des Textinhalts verwendet.
+- Die Anwendung sendet den extrahierten Textinhalt des Main-Elements an die OpenAI API.
+- Der zurückgegebene Titel wird der Anwendung zur weiteren Verwendung zur Verfügung gestellt.
+- Der Titel wird in einem geeigneten Datenformat (z.B. String) zurückgegeben und kann von anderen Teilen der Anwendung genutzt werden.
+
+### Testfälle (nur von QA abhacken)
+- [x] Stellenanzeigen werden hineingegeben und Jobtitel kommt raus
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2919/Description/1
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2962/Description/1
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2966/Description/2
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2981/Description/1",94,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/94,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-05-19 08:49:25,2024-06-14 05:08:28,2024-06-14 05:08:28,Abgabe 2,13,"Team::BackEnd,User Story",0,38100,,
+Alphabetische Sortierung der Jobs,"Als Nutzer möchte ich die Stellenanzeigen alphabetisch sortiert sehen, damit ich sie leichter durchsuchen und schnell die gewünschten Stellen finden kann.
+
+Akzeptanzkriterien:
+- Die Jobangebote werden Alphabetisch angezeigt.
+- Es gibt die Möglichkeit sie absteigend oder aufsteigend zu sortieren.
+- Es sollte erweiterbar sein für weitere Sortierungsmöglichkeiten.
+
+## Testfälle
+- [x] Nach Klicken des Sortier-Button sind die Stellen alphabetisch sortiert
+- [x] Es kann absteigend oder aufsteigend sortiert werden.",100,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/100,Closed,Max Mager,max.mager,Artem Zakharevych,artem.zakharevych,No,No,,2024-05-19 09:43:45,2024-06-14 05:08:34,2024-06-14 05:08:34,Abgabe 2,3,"Team::FrontEnd,User Story",0,13200,,
+cyberagentur,,102,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/102,Closed,Max Mager,max.mager,"Ilyass Essar Rhini, Louis Westerheide","ilyass.essar_rhini, louis.westerheide",No,No,,2024-05-19 10:32:01,2024-05-28 13:41:19,2024-05-28 13:41:19,Abgabe 2,,,0,0,,
+Stelle Aufklappen,"Als Nutzer möchte ich weitere Daten angezeigt bekommen, wenn ich auf eine Stellenanzeige klicke, damit ich mich umfangreicher informieren kann.
+
+Akzeptanzkriterien:
+- Die Daten sollten entweder in einer separaten Seite angezeigt werden oder in einem Dialog ([HeadlessUI](https://headlessui.com/react/dialog))
+- Es wird der Titel und der Link zu der Originalstelle angezeigt, für weitere Informationen sind Platzhalter vorhanden.
+- Das Design hat sich an die Vorlage vom LSN zu halten.
+
+## Testfälle (nur von QA abhacken)
+- [x] Anklicken von Job öffnet Unterseite
+- [x] Auf Unterseite wird Jobtitel angezeigt
+- [x] Man kann wieder zu der Liste zurückkehren.
+- [x] Der Link zur Originalseite ist vorhanden(zur zeit nur dummy links)",104,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/104,Closed,Max Mager,max.mager,Lam Nguyen,lam.nguyen,No,No,,2024-05-19 11:02:09,2024-06-14 05:08:23,2024-06-14 05:08:22,Abgabe 2,8,"Team::FrontEnd,User Story",0,54000,,
+Architektur Plan erstellen,"Als Team brauchen wir eine solide Basis, auf der wir unsere Software aufbauen können. Deshalb soll eine konkrete Architektur detailliert niedergeschrieben und mit entsprechenden Diagrammen übersichtlich dargestellt werden. 
+
+Dies wurde bereits als grober Plan in Mural entworfen siehe: https://app.mural.co/t/stellenboerse2887/m/stellenboerse2887/1714756555907/5036b89e2aea21ee8e65e6a21062796633064211?sender=u593b68f00083fed119f41399
+
+Nun ist es an der Zeit, diesen zur Bewertung ins Wiki zu konvertieren und alle aktuellen Informationen, Neuerungen und konketisierungen einzupflegen.
+
+Dies soll soweit, wie Informationsstand ist erstellt werden. Neuerungen danach werden durch neue Issues eingepflegt.
+
+Akzeptanzkriterien:
+- Stand der Architketur aktulisiert auf neuesten Stand
+- detailliert Architektur beschrieben
+- passende Diagramme zur Übersicht erstellt",105,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/105,Closed,Vladislav Antonov,vladislav.antonov,Vladislav Antonov,vladislav.antonov,No,No,,2024-05-19 13:46:15,2024-06-14 08:16:46,2024-06-14 08:16:46,Abgabe 2,21,Spike,0,86400,,
+"config vergleichen, Strengegrad, Regelset angleichen",,127,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/127,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:14:31,2024-05-25 20:14:26,2024-05-25 20:14:26,Abgabe 2,,,0,0,,
+"gitignore anpassen, keine sinnlosen sachen einchecken",,128,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/128,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:15:28,2024-05-25 20:14:15,2024-05-25 20:14:15,Abgabe 2,,,0,0,,
+generierte elemente bereinigen,,129,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/129,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:16:16,2024-05-25 20:14:08,2024-05-25 20:14:08,Abgabe 2,,,0,0,,
+"Weg finden zur Kommnuikation des Backends mit Datenbank (z.B. Bibliothek, NPM Paket,...)",,130,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/130,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:17:12,2024-05-26 13:42:44,2024-05-26 13:42:44,Abgabe 2,,,0,0,,
+.bat datei die automatisch commands ausführt um bibliotheken etc zu installieren,,131,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/131,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:17:13,2024-06-14 05:34:01,2024-06-14 05:34:01,Abgabe 2,,,0,0,,
+Kommunikation verwenden um Befehle auf DB ausführen zu lassen,,132,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/132,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:18:20,2024-05-26 18:29:41,2024-05-26 18:29:41,Abgabe 2,,,0,0,,
+Passendes Datenmodelll für abgefragte Daten erstellen,,133,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/133,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:20:22,2024-05-26 18:30:43,2024-05-26 18:30:43,Abgabe 2,,,0,0,,
+Informieren über SQl-Injectionschutz und Zugriffskontrollen,,134,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/134,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:22:21,2024-05-26 18:33:16,2024-05-26 18:33:16,Abgabe 2,,,0,0,,
+Erstellen API-Zugruffpunkts,,135,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/135,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:26:30,2024-05-27 07:54:01,2024-05-27 07:54:01,Abgabe 2,,,0,0,,
+API-Doku bereitstellen (mit entsprechendem Tool),,136,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/136,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:27:59,2024-05-27 09:48:41,2024-05-27 09:48:41,Abgabe 2,,,0,0,,
+MySQL DB lokal aufsetzen,,137,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/137,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:28:43,2024-05-23 16:31:10,2024-05-23 16:31:10,Abgabe 2,,,0,0,,
+Datenbankschema entwerfen,,138,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/138,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:29:02,2024-05-24 09:14:03,2024-05-24 09:14:03,Abgabe 2,,,0,0,,
+"Welche Fehler könnten kommen, wie geht man dann damit um?",,139,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/139,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:29:43,2024-06-14 05:33:55,2024-06-14 05:33:55,Abgabe 2,,,0,0,,
+Datenbankschema in Repo bereitstellen,,140,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/140,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:33:27,2024-05-25 19:45:20,2024-05-25 19:45:20,Abgabe 2,,,0,0,,
+"Bibliothek axios installieren, oder andere geeignete suchen",,141,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/141,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:33:41,2024-06-03 17:14:40,2024-06-03 17:14:40,Abgabe 2,,,0,0,,
+anfrage schreiben,,142,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/142,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:33:55,2024-06-05 19:31:48,2024-06-05 19:31:48,Abgabe 2,,,0,0,,
+Migration für lokale DB-Erstellung ,,143,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/143,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:33:58,2024-05-25 19:45:31,2024-05-25 19:45:31,Abgabe 2,,,0,0,,
+fehlerbehandlung,,144,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/144,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:34:20,2024-06-14 05:33:50,2024-06-14 05:33:50,Abgabe 2,,,0,0,,
+anschließen an jobliste,,145,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/145,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:34:31,2024-06-05 19:31:57,2024-06-05 19:31:57,Abgabe 2,,,0,0,,
+wie oft wird die anfrage losgeschickt? an welches event wird es gebunden (onLoad...),,146,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/146,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:34:58,2024-06-14 05:33:47,2024-06-14 05:33:47,Abgabe 2,,,0,0,,
+geeignetes NPM-Paket aussuchen (HTML-Parser),,147,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/147,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:35:10,2024-06-14 05:33:39,2024-06-14 05:33:39,Abgabe 2,,,0,0,,
+Crawler URL übergeben und HTML auslesen,,148,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/148,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:37:37,2024-06-14 05:33:36,2024-06-14 05:33:36,Abgabe 2,,,0,0,,
+aus Crawler E-Tag der Website auslesen,,149,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/149,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:38:01,2024-06-14 05:33:33,2024-06-14 05:33:33,Abgabe 2,,,0,0,,
+Überprüfung bzgl robot.txt,,150,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/150,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-21 16:38:20,2024-06-14 05:33:30,2024-06-14 05:33:30,Abgabe 2,,,0,0,,
+Über Iconplatzierung nachdenken,,151,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/151,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:38:50,2024-06-14 05:33:23,2024-06-14 05:33:23,Abgabe 2,,,0,0,,
+icon mit event versehen,,152,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/152,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:39:00,2024-06-14 05:33:19,2024-06-14 05:33:19,Abgabe 2,,,0,0,,
+best practice zum sortieren finden?,,153,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/153,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:39:44,2024-06-14 05:33:16,2024-06-14 05:33:16,Abgabe 2,,,0,0,,
+wie kann erweiterbarkeit (zB um nach pendelzeit) gewährleistet werden,,155,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/155,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-21 16:40:48,2024-06-14 05:33:01,2024-06-14 05:33:01,Abgabe 2,,,0,0,,
+"build vorbereiten, erklären planen (Dom)",,158,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/158,Closed,Dominique Fischer,dominique.fischer,Dominique Fischer,dominique.fischer,No,No,,2024-05-21 17:50:02,2024-05-25 20:13:58,2024-05-25 20:13:58,Abgabe 2,,,0,0,,
+Erklärung in README zum Aufsetzen/Migration,,159,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/159,Closed,Marie Schwabe,marie.schwabe,"","",No,No,,2024-05-22 18:07:37,2024-05-25 19:45:37,2024-05-25 19:45:37,Abgabe 2,,,0,0,,
+Skript zum ausführen der Migration hinzufügen,,160,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/160,Closed,Max Mager,max.mager,"","",No,No,,2024-05-23 07:24:17,2024-05-25 19:45:46,2024-05-25 19:45:46,Abgabe 2,,,0,0,,
+Build Pipeline,"Als Team brauchen wir eine Build Pipeline, die für einen beliebigen branch unsere gesamte Anwenndung baut und als Artefakt für weitere Pipelines bereitstellt. Dadurch soll es möglich sein verschiedene Artefakt Versionen zu besitzen, die in einer weiteren Pipeline, z.B. einer Docker Image Pipeline verwendet werden können.
+
+Akzeptanzkriterien:
+- es gibt eine Build Pipeline
+- es gibt eine Build-Ordner, in welchem .yml Dateien liegen
+- das bauen erfolgt ohne devDependencies
+- das bauen erfolgt über tsc
+- diese baut unsere gesamte Anwendung auf dem Stand des ausführenden Branches
+- diese reagiert nur auf manuelles ausführen
+- die gebaute Anwendung steht als Artefakt für weitere Pipelines zur Verfügung",162,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/162,Closed,Vladislav Antonov,vladislav.antonov,Louis Westerheide,louis.westerheide,No,No,,2024-05-24 11:27:37,2024-06-07 18:45:48,2024-06-07 18:45:48,Abgabe 2,8,Team::DevOps,0,18000,,
+Dependencies sotieren,"Als Team wollen wir bei unserer Auslieferung nur relevante Bibliotheken mit veröffentlichen, damit die ausgelieferte Version nicht zu groß wird. Was für den Nutzer eventuelle Performance Probleme verursachen würde.
+
+Dafür müssen die Bibliotheken (Dependencies) in der Package.json richtig zwischen devDependencies und dependencies aufgeteilt werden.
+
+https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencie
+
+Akzeptanz Kriterien:
+- In allen Package.json Dateien wurden die die Abhängigkeiten richtig sortiert.
+
+### Testfälle (nur von QA abhacken)
+- [x] Das Frontend geht noch zu starten
+- [x] Das Backend geht noch zu starten",166,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/166,Closed,Max Mager,max.mager,Thorben Dirk Stehling,thorben_dirk.stehling,No,No,,2024-05-25 07:55:11,2024-06-14 05:08:35,2024-06-14 05:08:35,Abgabe 2,2,"Team::FullStack,Technical Debt",0,5400,,
+Technologien ausprobieren und Empfehlungen in den Kommentaren dokumentieren,,168,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/168,Closed,Junyu Guo,junyu.guo,"","",No,No,,2024-05-27 10:51:19,2024-05-28 14:33:34,2024-05-28 14:33:34,Abgabe 2,,,0,0,,
+Regeln mit dem Team besprechen,,169,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/169,Closed,Junyu Guo,junyu.guo,"","",No,No,,2024-05-27 10:52:23,2024-05-28 14:33:43,2024-05-28 14:33:43,Abgabe 2,,,0,0,,
+Auswertfunktion für HTTP-Header (ETag) erstellen,,171,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/171,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:31:57,2024-05-28 14:47:08,2024-05-28 14:47:08,Abgabe 2,,,0,0,,
+Auswertfunktion für HTTP-Header (last-modified) erstellen,,172,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/172,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:34:05,2024-05-28 14:47:19,2024-05-28 14:47:19,Abgabe 2,,,0,0,,
+Testkonzept in Wiki aufnehmen,,173,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/173,Closed,Junyu Guo,junyu.guo,"","",No,No,,2024-05-28 14:34:05,2024-05-28 14:34:18,2024-05-28 14:34:18,Abgabe 2,,,0,0,,
+Auswertfunktion für sitemap.xml erstellen,,174,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/174,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:34:23,2024-05-28 14:47:26,2024-05-28 14:47:26,Abgabe 2,,,0,0,,
+Header-Daten in JSON Datei speichern und aus dieser laden,,175,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/175,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:40:36,2024-05-28 14:47:43,2024-05-28 14:47:43,Abgabe 2,,,0,0,,
+Header-Daten Priorisierungsfunktion schreiben,,176,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/176,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:41:43,2024-05-28 14:47:59,2024-05-28 14:47:59,Abgabe 2,,,0,0,,
+Fehlerbehandlung integrieren,,177,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/177,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:42:00,2024-05-28 14:48:12,2024-05-28 14:48:12,Abgabe 2,,,0,0,,
+Code-Dokumentation erstellen,,178,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/178,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:42:15,2024-06-02 10:00:45,2024-06-02 10:00:45,Abgabe 2,,,0,0,,
+Externe Crawlerfunktion aufrufen bei geänderten Seiteninhalt,,179,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/179,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:42:56,2024-06-01 14:13:36,2024-06-01 14:13:36,Abgabe 2,,,0,0,,
+Body-Inhalt Hashen und diesen Hash vergleichen,,180,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/180,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-05-28 14:44:23,2024-05-28 14:48:32,2024-05-28 14:48:32,Abgabe 2,,,0,0,,
+Email Validation,"Als Team möchten wir wissen, welche Variante besser für die Validation geeignet ist, damit wir die richtige implementieren.
+
+Zum einen könnten die Stelleninformationen per E-Mail gesendet werden und auf diese E-Mail muss geantwortet werden. Wir werten dann die Antwort aus.",184,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/184,Closed,Max Mager,max.mager,Batbuyan Buyandelger,batbuyan.buyandelger,No,No,,2024-05-29 11:13:52,2024-06-14 05:08:31,2024-06-14 05:08:31,Abgabe 2,5,"Spike,Team::BackEnd",0,7200,,
+Mail Client erstellen,"Als Team möchten wir einen funktionierenden Mailclient, damit wir E-Mail für die Validation verschicken können.
+
+Akzeptanzkriterien:
+- Es ist möglich, automatisiert über das Backend E-Mails zu verschicken.
+
+### Testfälle:
+- [x] E-Mail mit Hello World kann empfangen werden von externem Konto
+- [x] E-Mail kann gesendet werden.",185,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/185,Closed,Max Mager,max.mager,Mahmod Qobty (Mahamid),mahmod.qobty_mahamid,No,No,,2024-05-29 11:20:04,2024-06-14 05:08:24,2024-06-14 05:08:24,Abgabe 2,5,"Team::BackEnd,User Story",0,13200,,
+Testumgebungen aufsetzen,"Als Team möchten wir unsern Code testen, damit wir weniger Fehler einbauen und eine höhere Codequalität erreichen. Dafür benötigen wir Testumgebungen.
+
+Akzeptanzkriterien:
+
+- Die in #86 genannten Testumgebungen sind installiert.
+- anderen Teammitglieder können verstehen, wie sie Tests erstellen können.
+
+### Testfälle (Nur von QA auszuchecken)
+
+* [x] Beipiel Unit Test funktioniert 
+* [x] Beipiel Snapshot Test funktionier
+* [x] Ordnerstruktur für Tests vorhanden",186,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/186,Closed,Max Mager,max.mager,Junyu Guo,junyu.guo,No,No,,2024-05-29 11:27:04,2024-06-16 14:04:10,2024-06-14 05:08:36,Abgabe 2,8,"Team::QA,User Story",0,23400,,
+Zusammenführen des Webcrawlers,"Als Team möchten wir, das die verschiedenen Funktionen des Webcrawlers zusammen arbeiten, damit der Webcrawler in einer rudimäentären art funktioniert.
+
+Akzeptanzkriterien:
+- Die Funktionen der Tickets #92 #93  #94 und #95 werden sinnvoll aufgerufen, sodas von der übergebenen Stellenanzeige der Titel extrahiert wird.
+- Dies kann durch die Konsole per Befehl + URL aufgerufen werden, um die Funktionalität zu zeigen und zu testen.
+- evtl. Testaufrufe/Funktionen sollten entfernt werden (evtl. Konstanten und nicht mehr genutzte Variablen auch).
+
+### Testfälle (nur von QA abgehackt werden)
+- [x] Rufe die UFZ Seiten auf und schaue 
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2991/Description/1
+- [x] https://recruitingapp-5128.de.umantis.com/Vacancies/2977/Description/2
+- [x] weitere ufz stellen",188,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/188,Closed,Max Mager,max.mager,Robert Hobelsberger,robert.hobelsberger,No,No,,2024-05-29 12:22:50,2024-06-16 12:35:58,2024-06-14 05:08:26,Abgabe 2,13,"Team::BackEnd,User Story",0,49500,,
+Technische Schulden mit Tailwind verhindern.,"Als Team möchten wir keine technischen Schulden mit ziehen, damit wir auch später noch gut unseren Code warten können. 
+
+Akzeptanzkriterien:
+- tailwind.config.js wird durch Typescript ersetzt
+- Tailwind funktioniert bei verschiedenen Teammitgliedern ohne Probleme.
+
+## Testfälle (nur von QA abhacken)
+- [ ] Die Anwendung funktioniert noch (die Jobliste hat ihre Styles behalten)",189,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/189,Closed,Max Mager,max.mager,Artem Zakharevych,artem.zakharevych,No,No,,2024-05-29 13:34:11,2024-06-14 05:09:58,2024-06-14 05:09:58,Abgabe 2,5,"Team::FrontEnd,Technical Debt",0,97200,,
+thematik recherchieren,,190,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/190,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 14:57:52,2024-06-14 05:32:33,2024-06-14 05:32:33,Abgabe 2,,,0,0,,
+Testen ob es auf verschiedenen Rechnern klappt,,191,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/191,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 14:58:42,2024-06-14 05:32:28,2024-06-14 05:32:28,Abgabe 2,,,0,0,,
+Dependecie Unterscheidung informieren (Dev-Dependencie/Normale-Dependencie),,192,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/192,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 14:58:54,2024-06-14 05:32:24,2024-06-14 05:32:24,Abgabe 2,,,0,0,,
+Frontende JSON anpassen,,193,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/193,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 14:59:20,2024-06-14 05:32:20,2024-06-14 05:32:20,Abgabe 2,,,0,0,,
+Backend JSON anpassen,,194,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/194,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 14:59:34,2024-06-14 05:32:13,2024-06-14 05:32:13,Abgabe 2,,,0,0,,
+"Vorteile Nachteile extraseite, oder sowas wie Headless ",,195,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/195,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 15:01:25,2024-06-14 05:32:11,2024-06-14 05:32:11,Abgabe 2,,,0,0,,
+Crawler Informationen Lokal erhalten,,196,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/196,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:02:10,2024-06-06 13:52:07,2024-06-06 13:52:07,Abgabe 2,,,0,0,,
+"titel, platzhalter für späteren text sollen in komponente transportiert werden",,197,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/197,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 15:02:40,2024-06-14 05:32:06,2024-06-14 05:32:06,Abgabe 2,,,0,0,,
+Crawler-Output auf sinnvolle Elemente reduzieren (bspw. keine HTML-Tags),,198,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/198,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:03:28,2024-06-06 13:52:55,2024-06-06 13:52:55,Abgabe 2,,,0,0,,
+Design anpassen,,199,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/199,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 15:04:07,2024-06-14 05:32:03,2024-06-14 05:32:03,Abgabe 2,,,0,0,,
+staatische Daten (oder die aus dem Backend wenn das dann soweit ist) einbinden ,,200,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/200,Closed,Dominique Fischer,dominique.fischer,"","",No,No,,2024-05-30 15:05:33,2024-06-14 05:32:00,2024-06-14 05:32:00,Abgabe 2,,,0,0,,
+ Siehe Architektur-Wiki: Erarbeite sinnvolle Rolle für AI ,,202,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/202,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:07:47,2024-06-06 19:20:22,2024-06-06 14:25:15,Abgabe 2,,,0,0,,
+"Siehe Architektur-Wiki; Erarbeite sinnvolle Message-Tempate mit AI (Anweisung, HTML-Text, Job-Attribute, Ausgabeformat)",,206,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/206,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:14:28,2024-06-06 13:52:32,2024-06-06 13:52:32,Abgabe 2,,,0,0,,
+Respone-Mesasge sinnvoll verarbeiten und als bspw. String oder Objekt bereitstellen,,208,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/208,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:15:12,2024-06-07 11:55:20,2024-06-07 11:55:20,Abgabe 2,,,0,0,,
+HTML-Auslesung und ETag-Auswertefuntkion auf Kompatibilität testen,,211,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/211,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:19:53,2024-06-11 14:36:17,2024-06-11 14:36:17,Abgabe 2,,,0,0,,
+Übergeordnete Methode erstellen und auf Zusammenspiel testen,,212,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/212,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:20:51,2024-06-11 13:47:34,2024-06-11 13:47:34,Abgabe 2,,,0,0,,
+Altlasten entfernen (nicht benötigte Logik),,214,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/214,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:22:34,2024-06-11 13:47:54,2024-06-11 13:47:54,Abgabe 2,,,0,0,,
+Prüfen nach passenden Packeten/Bibliotheken oder passendes CLI-Programm,,216,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/216,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:33:01,2024-06-14 05:31:56,2024-06-14 05:31:56,Abgabe 2,,,0,0,,
+Konfiguration bereitstellen zur Benutzung (bspw. mittels env-variablen),,217,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/217,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:39:25,2024-06-14 05:31:53,2024-06-14 05:31:53,Abgabe 2,,,0,0,,
+Methode bereitstellen um Emails zu versenden,,218,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/218,Closed,Vladislav Antonov,vladislav.antonov,"","",No,No,,2024-05-30 15:39:40,2024-06-14 05:31:49,2024-06-14 05:31:49,Abgabe 2,,,0,0,,
+QA Board anlegen mit ToTest Label,"Als QA möchten wir auch gerne ein Board haben, wie dass das DevOps Team bereits hat, um unsere Arbeit besser zu verfolgen. Dieses soll QA Issues anzeigen sowie auch ToTest Label versehene Issues anzeigen.
+
+Akzeptanzkriterien:
+- es gibt ein QA Board das als erste Spalte QA Label verknüpft hat
+- es gibt zwei Spalten für QA Personen um ein Doing aufzuzeigen
+- es gibt ein neues ToTest Label mit Beschreibung
+- es gibt in diesem QA Board eine Spalte welches mit ToTest verknüpft ist
+- diese Prozessänderung wird im Wiki im Git WorkFlow und Phasen des Issue Boards  angepasst
+- diese Prozessänderung wird QA und Team vorgestellt und auf die Prozessänderung hingewiesen",231,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/231,Closed,Vladislav Antonov,vladislav.antonov,Louis Westerheide,louis.westerheide,No,No,,2024-05-31 11:19:19,2024-06-12 14:02:44,2024-06-04 14:35:58,Abgabe 2,1,Team::DevOps,0,1800,,
+Docker Image Pipeline,"Die Modulleitung und QA wünschen sich eine Möglichkeit, einen bestimmten Stand unserer Software in einem Docker Container betrachtnekönne.
+
+Deshalb soll es eine Build Docker Image Pipeline geben, die das Artefakt einer Build Pipeline in sich einbindet und in der CI Registry zum Abruf zur Verfügung steht.
+
+Akzeptanzkriterien:
+- es gibt eine Build Docker Image Pipeline
+- diese verwendet spezifizierte Artefakte
+- diese platziert Artefakte in passenden Container
+- wird manuell ausgeführt oder sobald ein merge in den main abgeschlossen wurde
+- Image wird in Registry geladen",234,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/234,Closed,Vladislav Antonov,vladislav.antonov,Louis Westerheide,louis.westerheide,No,No,,2024-05-31 12:32:23,2024-06-16 18:34:05,2024-06-16 18:34:04,Abgabe 2,13,Team::DevOps,0,93600,,
+Jest einbinden und ein Beispiel Test (für QA) erstellen,,236,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/236,Closed,Junyu Guo,junyu.guo,"","",No,No,,2024-06-04 14:01:10,2024-06-04 19:50:31,2024-06-04 19:50:31,Abgabe 2,,,0,0,,
+Ein Snapshot Test (Bespiel Code) für Frontend erstellen,,237,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/237,Closed,Junyu Guo,junyu.guo,"","",No,No,,2024-06-04 14:03:27,2024-06-04 19:50:40,2024-06-04 19:50:40,Abgabe 2,,,0,0,,
+Swagger UI für APIs benutzen,"## User Story
+
+### Beschreibung:  
+**Als** Team
+
+**möchten wir** eine gute und leicht zu erstellende Dokumentation der API
+
+**um** leicht die APIs von anderen zu benutzen.
+
+### Weitere Notizen
+Dafür sollte [Swagger UI](https://swagger.io/tools/swagger-ui/) genutzt werden. Dies erzeugt zu den APIs eine Seite wo diese Dokumentiert sind und ausgetestet werden können.
+
+### Akzeptanzkriterien
+
+1. [Swagger UI wurde eingebunden]
+2. [Alle Routen werden aufgelistet]
+
+### Testfälle
+- [x] Alle APIs funktionieren wie beschrieben.",240,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/240,Closed,Max Mager,max.mager,Batbuyan Buyandelger,batbuyan.buyandelger,No,No,,2024-06-05 10:32:11,2024-06-14 05:08:33,2024-06-14 05:08:33,Abgabe 2,5,"Team::BackEnd,User Story",0,20400,,
+Abgabe 2 vorbereiten,"## User Story
+
+### Beschreibung:  
+**Als** Team
+
+**möchten wir** die Abgabe 2 korrekt durchführen
+
+**um** eine faire Bewertung zu erhalten.
+
+
+
+### Akzeptanzkriterien
+
+- Alle Tickets müssen geschätzt sein
+- Tests von QA sollten in einem eigenen Ticket festgehalten werden, damit es auch mit Sicherheit bewertet wird.
+- Die Register sollten alle aktualisiert werden
+- Stakeholder sollten aktualisiert werden
+- Nicht erkennbare Arbeit sollte beschrieben werden.
+- Tickets haben die richtigen Labels",246,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/246,Closed,Max Mager,max.mager,"Max Mager, Marie Schwabe, Louis Westerheide","max.mager, marie.schwabe, louis.westerheide",No,No,,2024-06-07 07:44:51,2024-06-19 11:10:09,2024-06-19 11:10:09,Abgabe 2,5,User Story,0,34200,,
+"Test Pakete in Depedenices verschoben, da Production Build sonst nicht geht","## Technical Debt
+
+### Beschreibung:
+jest.config.ts wurde in include aufgenommen. Leider ist dadurch aber alle andere exkludiert wurden, wodurch bei tsc nur noch diese Datei gebaut wird als js. Dies muss behoben wwerden. Zusätzlich wurden viele/alle Test Pakete mit zu den normalen depedencies vershcoebnn, weil diese beim bauen gefehlt hätten.
+
+### Auswirkungen
+tsc geht nicht weil nur noch die jest config kompiliert wird und unnötige Pakete landen in der Production Umgebung
+
+### Lösungsvorschläge
+1. Test Pakete zu devdepedenices verschieben
+2. tsc kann wieder alle Dateien bauen und benötigt die jest/test Pakete nicht mehr
+
+Siehe Issue #186",247,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/247,Closed,Vladislav Antonov,vladislav.antonov,Junyu Guo,junyu.guo,No,No,,2024-06-07 11:23:40,2024-06-14 05:08:38,2024-06-14 05:08:38,Abgabe 2,3,"Team::QA,Technical Debt",0,5400,,
+Pilot ist auf Server Deployed(nur prüfen nicht umsetzten),,248,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/248,Closed,Max Mager,max.mager,"","",No,No,,2024-06-09 08:30:36,2024-06-17 15:08:50,2024-06-17 15:08:50,Abgabe 2,,,0,0,,
+Tag sprint2 wurde gesetzt,,249,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/249,Closed,Max Mager,max.mager,Max Mager,max.mager,No,No,,2024-06-09 08:30:51,2024-06-19 11:08:23,2024-06-19 11:08:23,Abgabe 2,,,0,0,,
+Datei mit Link zum Repository abgeben,,250,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/250,Closed,Max Mager,max.mager,Max Mager,max.mager,No,No,,2024-06-09 08:32:04,2024-06-19 11:08:27,2024-06-19 11:08:27,Abgabe 2,,,0,0,,
+sprint2.adoc fertiggestellt,,251,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/251,Closed,Max Mager,max.mager,"","",No,No,,2024-06-09 08:32:23,2024-06-19 11:08:36,2024-06-19 11:08:07,Abgabe 2,,,0,0,,
+sprint2.adoc Punkt 1 und 2 hinzugefügt,,252,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/252,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:34:55,2024-06-11 14:36:45,2024-06-11 14:36:45,Abgabe 2,,,0,0,,
+Detailierte Beschreibung des Piloten und Link (sprint2.adoc Punkt 3.1),,253,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/253,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:35:56,2024-06-19 11:07:03,2024-06-19 11:07:03,Abgabe 2,,,0,0,,
+sprint2.adoc Punkt 3.2 Docker Erklärung und Link,,254,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/254,Closed,Max Mager,max.mager,Louis Westerheide,louis.westerheide,No,No,,2024-06-09 08:36:29,2024-06-19 11:07:37,2024-06-19 11:07:37,Abgabe 2,,,0,0,,
+sprint2.adoc 3.3,,255,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/255,Closed,Max Mager,max.mager,Louis Westerheide,louis.westerheide,No,No,,2024-06-09 08:38:06,2024-06-19 11:07:56,2024-06-19 11:07:56,Abgabe 2,,,0,0,,
+sprint2.adoc 4.3 Tickets verlinken zu erfüllten User Storys,,256,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/256,Closed,Max Mager,max.mager,Max Mager,max.mager,No,No,,2024-06-09 08:39:50,2024-06-12 20:25:53,2024-06-12 20:25:36,Abgabe 2,,,0,0,,
+"sprint2.adoc Punkt 5 ausführlich beschreiben (QA, DevOps, Projektleitung, Sprintabgaben etc aufführen)",,257,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/257,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:40:50,2024-06-12 14:00:29,2024-06-12 14:00:29,Abgabe 2,,,0,0,,
+Roles and Responsibilities aktualisiert,,258,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/258,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:41:09,2024-06-11 14:58:16,2024-06-11 14:58:16,Abgabe 2,,,0,0,,
+Project description aktualisiert,,259,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/259,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:41:18,2024-06-11 15:23:49,2024-06-11 15:23:49,Abgabe 2,,,0,0,,
+Follow-up-Register aktualisiert,,260,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/260,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:41:27,2024-06-12 13:15:35,2024-06-12 13:15:35,Abgabe 2,,,0,0,,
+Challenge-Register aktualisiert,,261,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/261,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:41:34,2024-06-12 13:16:08,2024-06-12 13:16:08,Abgabe 2,,,0,0,,
+Health-Register aktualisiert,,262,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/262,Closed,Max Mager,max.mager,Marie Schwabe,marie.schwabe,No,No,,2024-06-09 08:41:43,2024-06-12 13:15:47,2024-06-12 13:15:47,Abgabe 2,,,0,0,,
+Tickets exportiert,,263,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/263,Closed,Max Mager,max.mager,Max Mager,max.mager,No,No,,2024-06-09 08:42:48,2024-06-15 09:39:34,2024-06-15 09:39:34,Abgabe 2,,,0,0,,
+sprint2.adoc erstellt und in README verlinkt,,285,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/285,Closed,Marie Schwabe,marie.schwabe,Marie Schwabe,marie.schwabe,No,No,,2024-06-11 13:44:32,2024-06-11 14:18:37,2024-06-11 14:18:37,Abgabe 2,,,0,0,,
+Dokumentation hinzufügen,,286,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/286,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-06-11 13:48:24,2024-06-11 13:48:38,2024-06-11 13:48:38,Abgabe 2,,,0,0,,
+Projektleitdokumentation aktualisiert und in sprint2.adoc verlinkt,,287,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/287,Closed,Marie Schwabe,marie.schwabe,Marie Schwabe,marie.schwabe,No,No,,2024-06-11 13:49:03,2024-06-12 13:41:04,2024-06-12 13:41:04,Abgabe 2,,,0,0,,
+sprint2.adoc 4.1 4.2 aus Abgabe 1 übernehmen,,288,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/288,Closed,Marie Schwabe,marie.schwabe,Marie Schwabe,marie.schwabe,No,No,,2024-06-11 15:53:42,2024-06-12 13:40:19,2024-06-12 13:40:19,Abgabe 2,,,0,0,,
+Funktionen ergänzen um Jobtitel in die DB zu speichern,,289,https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/work_items/289,Closed,Robert Hobelsberger,robert.hobelsberger,"","",No,No,,2024-06-11 16:23:40,2024-06-11 16:23:51,2024-06-11 16:23:51,Abgabe 2,,,0,0,,

@@ -1,0 +1,13 @@
+{
+  "jobTitle": "Studentische Hilfskraft (m/w/d/k.A.) für den IT-Bereich - Programmierung",
+  "jobDescription": "Das Leibniz-Institut für Troposphärenforschung ist ein Forschungsinstitut der Leibniz-Gemeinschaft und ein international renommiertes Institut auf dem Gebiet der Aerosol-und Wolkenforschung. Wir suchen Verstärkung für unser serviceorientiertes IT-Team. Sie haben die Möglichkeit, ein vielfältiges und spannendes Aufgabengebiet in der IT eines außeruniversitären Forschungsinstituts wahrzunehmen. Ihre Aufgaben umfassen: Es wird Ihnen ein breitgefasstes Spektrum an neuesten IT-Technologien, eine angenehme Atmosphäre in einem motivierten Team, ein spannender Arbeitsplatz mit einer abwechslungsreichen Tätigkeit in einem interdisziplinären Arbeitsumfeld und vielfältige Angebote von Beruf und Familie sowie flexible Arbeitszeiten und Kita-Plätze geboten.",
+  "jobTasks": [
+    "Mitarbeit an Software Projekten (Website, Shell Scripting)",
+    "Arbeit an Automatisierungs- und Deploymentlösungen z. B. Ansible, Kubernetes, Docker",
+    "Betriebssysteminstallation und Konfiguration von Computern",
+    "Installation von Software"
+  ],
+  "applicationDeadline": null,
+  "language": "de",
+  "specialty": ["Ingenieurwissenschaften", "MINT"]
+}

@@ -1,0 +1,14 @@
+include:
+  - local: '/Build/build.yml'
+  - local: '/Build/docker-build.yml'
+  - local: '/Build/release.yml'
+  - local: '/Build/mr-build-test.yml'
+  - local: '/Build/test.yml'
+  - local: '/Build/linter.yml'
+stages: 
+  - build
+  - docker
+  - release
+  - build-test
+  - test
+  - lint

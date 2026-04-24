@@ -1,0 +1,16 @@
+{
+  "jobTitle": "Wissenschaftliche*r Mitarbeiter*in (m/w/d) im Bereich \"Transfer Learning für KI-Anwendungen auf Basis von Low-Cost FPGAs\" // Research Associate in the area of \"Transfer learning for AI applications based on low-cost FPGAs\"",
+  "jobDescription": "Wir sind eine Universität mit Schwerpunkten in den Ingenieur- und Naturwissenschaften sowie Wirtschaftswissenschaft, Humanwissenschaften und Medizin. 13.000 Studierenden aus dem In- und Ausland sowie ca. 3.000 Beschäftigten bieten wir hervorragende Studien- und Arbeitsbedingungen.\nDer Lehrstuhl Hardware-nahe Technische Informatik (HTI) befasst sich mit dem Entwurf laufzeitadaptiver, leistungs- und energieeffizienter heterogener Systemarchitekturen. Hierbei wird ein ganzheitlicher Ansatz verfolgt, der eine optimale Anpassung der Hardware- und Softwarearchitektur sowie des Systemmanagements an die Anforderungen der Anwendung und die technologischen Möglichkeiten der verwendeten Hardwareplattformen ermöglicht.",
+  "jobTasks": [
+    "Sie arbeiten im Rahmen eines Forschungsprojektes zur energie- und ressourceneffizienten Realisierung von Transfer-Learning Ansätzen auf Edge-Devices. Es sollen Verfahren und Hardwarearchitekturen entwickelt werden, welche es erlauben, auf FPGAs mit begrenzten Ressourcen Transfer-Learning für KI-Anwendungen zu realisieren. Dadurch soll es Edge-Devices ermöglicht werden, autonom und ohne den Transfer von Daten in die Cloud auf veränderte Anforderungen oder Umgebungseigenschaften zu reagieren. Hierfür gilt es zu untersuchen, wie bestehende Ansätze für Transfer-Learning hardwareeffizient umgesetzt und ggf. weiterentwickelt werden können. Die Ergebnisse hieraus sollen im Anschluss als flexible und leicht zu verwendende Open-Source IP Cores zur Verfügung gestellt werden.",
+    "Die Möglichkeit zur wissenschaftlichen Qualifikation im Rahmen einer Promotion ist gegeben und wird dementsprechend unterstützt."
+  ],
+  "applicationDeadline": "2025-01-31",
+  "language": "de",
+  "specialty": [
+    "Ingenieurwissenschaften",
+    "MINT",
+    "Medizin, Gesundheit, Psychologie",
+    "Wirtschaftswissenschaften"
+  ]
+}

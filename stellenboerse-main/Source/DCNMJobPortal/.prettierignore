@@ -1,0 +1,10 @@
+# .prettierignore
+**/dist/**
+**/build/**
+**/node_modules/**
+**/coverage/**
+**/README.md
+DatabaseHandler/Config/Migrations/**
+DatabaseHandler/Models/**
+.env
+**/*.html

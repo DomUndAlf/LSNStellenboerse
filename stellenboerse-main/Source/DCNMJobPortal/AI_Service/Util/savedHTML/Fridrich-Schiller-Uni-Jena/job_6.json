@@ -1,0 +1,15 @@
+{
+  "jobTitle": "IT-Applikationsbetreuer:in",
+  "jobDescription": "Die Friedrich-Schiller-Universität Jena ist eine traditionsreiche und forschungsstarke Universität im Zentrum Deutschlands. Als Volluniversität verfügt sie über ein breites Fächerspektrum. Ihre Spitzenforschung bündelt sie in den Profillinien Light – Life – Liberty. Sie ist eng vernetzt mit außeruniversitären Forschungseinrichtungen, forschenden Unternehmen und namhaften Kultureinrichtungen. Mit über 17.000 Studierenden und mehr als 10.000 Beschäftigten prägt die Universität maßgeblich den Charakter Jenas als weltoffene und zukunftsorientierte Stadt.\nDas Universitätsrechenzentrum ist zentraler IT-Dienstleister für die Friedrich-Schiller-Universität und einer von zwei Kernstandorten des IT-Zentrums der Thüringer Hochschulen. Das Universitätsrechenzentrum betreibt die zentrale IT-Infrastruktur der Universität und erbringt hochschulübergreifend IT-Dienste für die Hochschulen des Landes Thüringen.\n",
+  "jobTasks": [
+    "Sie beraten Anwenderinnen und Anwender insbesondere in den Prüfungsämtern zum optimalen Einsatz der Anwendungssysteme bzw. zur optimalen Umsetzung der bestehenden Anforderungen.",
+    "Sie analysieren Studien- und Prüfungsordnungen und sind verantwortlich für die ordnungsgemäße Konzeption und Modellierung im Anwendungssystem.",
+    "Sie arbeiten im Projekt zur Einführung des neuen Campusmanagementsystems HISinOne im Bereich Prüfungsmanagement (HISinOne EXA) und kümmern sich hier vor allem um die Migration bzw. Abbildung von Prüfungsordnungen und um die Migration von Leistungsdaten der Studierenden.",
+    "Sie erstellen generische Bescheide (wie z.B. Zeugnisvorlagen) auf Basis von SQL-Abfragen und XML-/XSL Technologien.",
+    "Sie entwickeln Testszenarien zur Qualitätssicherung der modellierten Prüfungsordnungen und stellen damit korrekte Systemfunktionalitäten auch bei Releasewechseln sicher.",
+    "Sie stimmen sich dabei eng mit dem Team der Anwendungsbetreuer im Bereich Campusmanagement, mit Fakultäten und der zentralen Universitätsverwaltung ab."
+  ],
+  "specialty": ["Nicht-wissenschaftliche Berufe"],
+  "applicationDeadline": "2025-01-31",
+  "language": "de"
+}

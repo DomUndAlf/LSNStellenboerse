@@ -1,0 +1,13 @@
+{
+  "jobTitle": "IT-Spezialist*in zur Entwicklung und Betreuung einer digitalen Chargendokumentationslösung (MODA-ES)",
+  "jobDescription": "Die Fraunhofer-Gesellschaft (www.fraunhofer.de) betreibt in Deutschland derzeit 76 Institute und Forschungseinrichtungen und ist eine der führenden Organisationen für anwendungsorientierte Forschung. Rund 32 000 Mitarbeitende erarbeiten das jährliche Forschungsvolumen von 3,4 Milliarden Euro. Das Fraunhofer-Institut für Zelltherapie und Immunologie IZI erforscht und entwickelt spezielle Problemlösungen an den Schnittstellen von Medizin, Biowissenschaften und Ingenieurswissenschaften. Sie suchen eine spannende Herausforderung, bei der Sie aktiv zur Zukunft der medizinischen Forschung beitragen können? Dann sind Sie bei uns genau richtig! Unsere Abteilung »GMP Zell- und Gentherapie« arbeitet an der Herstellung und Qualitätskontrolle innovativer zellbasierter Arzneimittel, z. B. neuartiger Therapeutika für die Krebstherapie. Im Zuge unserer Digitalisierung transformieren wir alle Dokumentationsprozesse von einer papierbasierten auf eine moderne elektronische Lösung – das Manufacturing Execution System (MES) MODA-ES® der Firma Lonza. Hierzu suchen wir eine*n IT-Spezialist*in an unserem Standort in Leipzig.",
+  "jobTasks": [
+    "Sie konfigurieren und programmieren anspruchsvolle, mehrstufige Herstellungsprozesse in MODA-ES und unterstützen uns dabei, den Übergang zur digitalen Chargendokumentation erfolgreich zu gestalten.",
+    "Um unsere Herstellungsprozesse effizienter und sicherer zu machen, erstellen Sie mit der Programmierschnittstelle von MODA-ES bedarfsgerechte Prozessabläufe.",
+    "Sie implementieren spezifische Berechnungsfunktionen und erweitern die Funktionalität der Plattform mit JavaScript und C#.",
+    "Sie übernehmen Verantwortung für die Qualifizierung und Validierung der Prozesse und stellen die Datensicherheit und Integrität sicher."
+  ],
+  "applicationDeadline": null,
+  "language": "de",
+  "specialty": ["Ingenieurwissenschaften", "Medizin, Gesundheit, Psychologie", "MINT"]
+}

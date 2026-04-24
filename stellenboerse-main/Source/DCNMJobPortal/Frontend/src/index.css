@@ -1,0 +1,91 @@
+/*
+  Fonts: Uses system/CMS fonts via font-family fallback.
+  No @font-face rules needed - the CMS or system provides Roboto.
+  This ensures GDPR compliance without bundled font files.
+*/
+
+/*
+  Global typography scale
+  ------------------------
+  Adjust `--font-scale` below to resize the entire UI's typography in one place.
+  Component headings and emphasis text use `.text-scale-lg` / `.text-scale-md`
+  utilities defined further down, which also respect the global scale.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-scale: 0.75;
+  --font-size-body: 16.4pt;
+  --font-size-heading-1: 22.5pt;
+  --font-size-heading-2: 18pt;
+  --font-size-heading-lg: 20pt;
+  --font-size-body-lg: 16pt;
+  --font-size-detail-heading: 30pt;
+}
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: calc(var(--font-size-body) * var(--font-scale));
+    color: #49494b;
+    background-color: #f8fafc;
+  }
+
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: calc(var(--font-size-heading-1) * var(--font-scale));
+    color: #042f63;
+  }
+
+  h2,
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: calc(var(--font-size-heading-2) * var(--font-scale));
+    color: #042f63;
+  }
+
+  p,
+  span,
+  li {
+    color: #49494b;
+  }
+}
+
+@layer utilities {
+  .text-scale-lg {
+    font-size: calc(var(--font-size-heading-lg) * var(--font-scale));
+  }
+
+  .text-scale-md {
+    font-size: calc(var(--font-size-body-lg) * var(--font-scale));
+  }
+
+  .text-scale-detail {
+    font-size: calc(var(--font-size-detail-heading) * var(--font-scale));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}

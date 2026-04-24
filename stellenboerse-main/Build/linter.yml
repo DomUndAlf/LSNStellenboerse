@@ -1,0 +1,16 @@
+image: node
+
+stages:
+ - lint
+
+eslint:
+  stage: lint
+  script:
+    - cd "./Source/DCNMJobPortal"
+    - npm i
+    - npx eslint .
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always

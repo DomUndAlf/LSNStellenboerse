@@ -1,0 +1,14 @@
+{
+  "jobTitle": "Postdoctoral Researcher (m/f/d) in the field of great ape evolutionary and population genomics",
+  "jobDescription": "The Max Planck Institute for Evolutionary Anthropology (MPI-EVA) in Leipzig, Germany, is a world-leading research institute investigating one of the most fundamental questions in science: What makes humans human? The institute brings together scientists from a wide range of disciplines who take an interdisciplinary approach to gain new insights into the history, diversity and capabilities of the human species. In the Department of Primate Behavior and Evolution, we use genomic approaches to shed light on the patterns and processes that guide primate evolution, including their evolutionary history, social and population structure, and responses to the environment. We are seeking for the Department of Primate Behavior and Evolution A Postdoctoral Researcher (m/f/d) In the field of great ape evolutionary and population genomics at the earliest possible date, full-time The Molecular Ecology group directed by Dr. Linda Vigilant within the Department of Primate Behavior and Evolution at MPI-EVA integrates genomic, behavioral, and life history data to study nonhuman primate evolution. Our primary focus is on the great apes, which allows us to understand the evolution of our closest living relatives and, in comparison, ourselves. Position Overview We are seeking a skilled and motivated researcher with strong computational and bioinformatic skills to join our team. The successful candidate will lead large-scale population genomic analyses of various great ape species, with the goal of better understanding genetic diversity, evolutionary dynamics, and population structure.",
+  "jobTasks": [
+    "Implement bioinformatics pipelines for population genetic analyses, including but not limited to SNP calling, allele frequency estimation, and linkage disequilibrium analysis.",
+    "Analyze whole genome sequencing data to assess genetic variation within and between populations, reconstruct ancestry, and examine evidence for inbreeding or outbreeding depression.",
+    "Contribute to the development of software tools and algorithms for enhanced data analysis.",
+    "Collaborate with behavioral ecologists, biodemographers, and other evolutionary biologists to interpret results.",
+    "Prepare and present findings at team meetings, conferences, and in peer-reviewed publications."
+  ],
+  "applicationDeadline": "2024-12-31",
+  "language": "en",
+  "specialty": ["Nicht-wissenschaftliche Berufe"]
+}

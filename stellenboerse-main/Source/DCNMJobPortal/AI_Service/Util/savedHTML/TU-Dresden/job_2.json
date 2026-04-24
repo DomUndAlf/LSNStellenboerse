@@ -1,0 +1,15 @@
+{
+  "jobTitle": "wiss. Mitarbeiterin bzw. Mitarbeiter (m/w/d) IT-Architektur am Datenkompetenzzentrum",
+  "jobDescription": "Einer der Forschungsschwerpunkte des Zentrums für Informationsdienste und Hochleistungsrechnen (ZIH) sind digitale Daten. Das ZIH forscht z. B. als Partner in mehreren Konsortien der Initiative zur Nationalen Forschungsdateninfrastruktur (NFDI) zum Thema Datenmanagement und leitet das nationale Kompetenzzentrum für Big Data und Künstliche Intelligenz ScaDS.AI Dresden/Leipzig. Die Mitarbeit am ZIH bietet Ihnen kreatives Arbeiten mit internationalen Expertinnen und Experten an Zukunftsthemen wie Datenmanagement und Data Science, eine für Data Science optimierte moderne Rechenzentrumsinfrastruktur, flexible Arbeitszeiten sowie das Leben in einer Wissenschafts- und Kulturstadt, die von einer einzigartigen Landschaft umgeben ist. Die Technische Universität Dresden (TUD) begreift Diversität als kulturelle Selbstverständlichkeit und Qualitätskriterium einer Exzellenzuniversität. Entsprechend begrüßen wir alle Bewerberinnen und Bewerbern, die sich mit ihrer Leistung und Persönlichkeit bei uns und mit uns für den Erfolg aller engagieren möchten.",
+  "jobTasks": [
+    "Konzeption, Aufbau und Weiterentwicklung einer einrichtungsübergreifenden IT-Infrastruktur",
+    "Standortübergreifende Anforderungserhebung sowie Erfassung technischer Bedingungen und Schnittstellen",
+    "Bereitstellung und Entwicklung von Webplattformen (Kommunikation, Informations- und Wissensmanagement, interaktives Lernen)",
+    "Schnittstellenentwicklung innerhalb der einrichtungsübergreifenden IT-Infrastruktur sowie Integration von Werkzeugen und Services z. B. aus der Nationalen Forschungsdateninfrastruktur (NFDI)",
+    "Unterstützung bei der Erarbeitung und Integration von interaktiven (virtuellen) Laboren und Demonstratoren",
+    "Support und -schulung der Nutzenden."
+  ],
+  "applicationDeadline": "2025-01-20",
+  "language": "de",
+  "specialty": ["Ingenieurwissenschaften", "MINT"]
+}

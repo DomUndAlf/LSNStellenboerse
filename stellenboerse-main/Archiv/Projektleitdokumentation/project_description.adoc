@@ -1,0 +1,54 @@
+== Project Description
+
+//Project name
+
+DCNM-Stellenbörse
+
+=== Purpose and Expected Benefits
+
+//A short description of why you’re going to do the project, and what benefits it has for your organization.
+
+Ziel ist es, eine Stellenbörse für LSN zu erstellen, die alle aktuellen Stellenausschreibungen der Mitgliedseinrichtungen übersichtlich und gebündelt darstellt. 
+Bisher sind die Stellenbörsen der einzelnen Mitglieder auf der Website des DCNM verlinkt. Zukünftig soll das Stellenbörsen-Modul jedoch auf der LSN-Website integriert und auf der DCNM-Website eingebettet werden. Dies ermöglicht eine zentralisierte und benutzerfreundliche Plattform für Stellensuchende und Organisationen.
+
+Die Anzeigen sollen automatisiert und filterbar dargestellt werden und auch für englischsprachige Arbeitssuchende erkennbar sein, sofern die Stellenangebote dafür geeignet sind.
+Für die Mitgliedseinrichtungen soll so wenig Aufwand wie möglich anfallen. Daher macht es Sinn, die Informationen zu den Stellenangeboten direkt von den dazugehörigen Websites zu holen und in die Stellenbörse einzupflegen. Ein KI-basierter Web-Scraping-Ansatz erscheint dafür sinnvoll.
+
+=== Expected Cost and Duration
+
+// Also mention the source of these constraints: Are they internal
+// preferences, or contractual obligations? How flexible and negotiable are
+// they? How would changes to the duration and cost of the project impact
+// the business?}
+
+
+
+Bei diesem Projekt gibt es keine direkten Kosten. Die Währung ist die Zeit der Teammitglieder. Das Modul schreibt ungefähr 10 Stunden die Woche für das Projekt vor. Allerdings können die Zeiten sehr stark variieren, weil die Studierenden noch andere Module besuchen. Ebenfalls könnte im Notfall ein höherer Einsatz der Studierenden kommen, indem sie beispielsweise ihre Prioritäten verschieben. Dies ist aber nicht wünschenswert, weil es auf die Motivation schwächt und langfristig kein gutes Teamklima schafft. Ebenfalls ist zu erwarten, dass die Studierenden gegen Ende des Semesters weniger Zeit für das Projekt haben, weil dann die Prüfungsphase beginnt. Daher sollte das Projekt in dieser Zeit keinen großen Zeitaufwand mehr erfordern.
+
+Es treten Kosten in dem Projekt auf, durch die Verwendung eines API-Zugang zu OpenAI. Als Modell wird GPT-3.5 Turbo verwendet, bei dem 1 Million Tokens 0.50$ kosten. Ein Wort lässt sich im Durchschnitt zu 1,8 Tokens umrechnen. Die Kosten werden vom Projektsponsor getragen.
+
+=== Requirements and Quality Expectations
+
+// \{Make sure you focus on major requirements and quality expectations,
+// and not on the functions, feature, or scope characteristics that can
+// satisfy those requirements. The latter belong to the Deliverables Map.}
+
+
+Es wird erwartet, dass die Stellen durch möglichst wenig Aufwand zusammengetragen werden. Dabei sollen die Stellen korrekt übernommen werden. Ebenfalls muss die Datenbeschaffung möglichst leicht erweiterbar sein. Da in Zukunft weitere Mitglieder hinzukommen könnten. Dabei ist zu bedenken, dass das Projekt nur 2 Semester geht und danach muss es ohne die Einwirkung des Teams weiter gepflegt werden können.
+
+
+=== Stakeholder List
+
+// \{List all the stakeholders (people who have an interest in the project
+// and can impact it), and extra information when needed (e.g., their
+// reporting requirements). Get back to this document and update it as soon
+// as you identify a new stakeholder.}
+
+
+- LSN: Herr Schaefer als Vertreter.
+- Prof. Both als Modulverantwortlicher/Bewertung
+- Personalverantwortliche der Mitglieder des LSN.
+- Personen, die die Dienste des DCNM in Anspruch nehmen.
+- Die zukünftige Koordinatorin des DCNM.
+
+

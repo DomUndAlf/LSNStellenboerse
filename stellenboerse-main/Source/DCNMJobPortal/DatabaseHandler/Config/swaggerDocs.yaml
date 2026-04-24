@@ -1,0 +1,1330 @@
+openapi: "3.1.0"
+info:
+  title: "DatabaseHandler API"
+  version: "1.0.0"
+  description: "API communication to the Database"
+servers:
+  - url: "http://localhost:4010"
+
+paths:
+  /database/jobs:
+    get:
+      summary: Retrieve all jobs
+      description: Returns a list of all jobs in the database, including details about the employer, location, and website.
+      tags:
+        - Jobs
+      responses:
+        200:
+          description: A list of jobs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/{jobid}:
+    delete:
+      summary: Delete a specific job by ID
+      description: Deletes a job from the database based on the provided job ID.
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: jobid
+          required: true
+          description: The ID of the job to delete.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: Job deleted successfully
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/website/{websiteid}:
+    get:
+      summary: Retrieve a job by Website ID
+      description: Fetches a single job from the database based on the provided Website ID.
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: websiteId
+          required: true
+          description: The Website ID of the job to retrieve.
+          schema:
+            type: integer
+            example: 42
+      responses:
+        200:
+          description: A single job object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/saveorupdate:
+      post:
+        summary: Save or update a job
+        description: Creates a new job if it doesn't exist or updates an existing job with the provided details. Returns the job ID upon success.
+        tags:
+          - Jobs
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  empid:
+                    type: integer
+                    description: ID of the employer
+                    example: 1
+                  locationid:
+                    type: integer
+                    description: ID of the location
+                    example: 1
+                  title:
+                    type: string
+                    description: Title of the job
+                    example: "Software Engineer"
+                  description:
+                    type: string
+                    description: Detailed description of the job
+                    example: "Responsible for developing and maintaining web applications."
+                  tasks:
+                    type: array
+                    description: Tasks of the job
+                    items:
+                      type: string
+                    example: ["Developing web applications", "Testing software"]
+                  applicationdeadline:
+                    type: string
+                    description: Application deadline
+                    example: "2024-11-10"
+                  websiteid:
+                    type: integer
+                    description: (Optional) ID of the website where the job is posted
+                    example: 1
+                  language:
+                    type: string
+                    description: Language of the job
+                    example: "en"
+                  specialty:
+                    type: array
+                    description: Specialty of the job
+                    items:
+                      type: string
+                    example: ["Bildung", "Wirtschaft und Recht", "Andere"]
+        responses:
+          200:
+            description: Job saved or updated successfully, returns the job ID
+            content:
+              application/json:
+                schema:
+                  type: integer
+                  example: 1
+          400:
+            description: Bad request, invalid input data
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/url:
+      post:
+        summary: Retrieve a job ID by URL
+        description: Searches for a job with specific WebsiteURL returns the corresponding JobID from the database.
+        tags:
+          - Jobs
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL of the job posting
+                    example: "https://www.example.com/jobs/software-engineer"
+        responses:
+          200:
+            description: Job ID retrieved successfully
+            content:
+              application/json:
+                schema:
+                  type: integer
+                  example: 1
+          404:
+            description: Job not found for the provided URL
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/urldelete:
+      post:
+        summary: delete a job by URL
+        description: Deletes a job with specific WebsiteURL from the database.
+        tags:
+          - Jobs
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL of the job posting
+                    example: "https://www.example.com/jobs/software-engineer"
+        responses:
+          200:
+            description: Job deleted successfully
+          404:
+            description: Job not found for the provided URL
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+  /database/jobs/validation/{jobid}:
+    put:
+      summary: Sets the validation key for a specific job by JobID
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: jobid
+          required: true
+          description: The JobID to assign the validation key
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        description: 24 chars long key
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                validationkey:
+                  type: string
+                  example: bfjduUJfdk213JFirldReo3j
+      responses:
+        200:
+          description: Assigned the key successfully
+        404:
+          description: Job with given Validation Key not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/employers:
+      post:
+        summary: Create a new employer
+        description: Adds a new employer to the database.
+        tags:
+          - Employers
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shortname:
+                    type: string
+                    description: The name of the employer.
+                    example: "Tech Innovations Inc."
+                  fullname:
+                    type: string
+                    description: The name of the employer.
+                    example: "Technical Innovations Incorporated, Germany GmbH at Berlin Institute of Technology"
+                  website:
+                    type: string
+                    description: The website of the employer.
+                    example: "https://techinnovations.com"
+                  locationid:
+                    type: integer
+                    description: The LocationID of the Location that employer has.
+                    example: 1
+                  emails:
+                    type: string[]
+                    description: The contact email of the employer.
+                    example: ["contact@techinnovations.com"]
+        responses:
+          200:
+            description: Employer created successfully
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+      get:
+        summary: Retrieve all employers
+        description: Returns a list of all employers in the database.
+        tags:
+          - Employers
+        responses:
+          200:
+            description: A list of employers
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Employer"
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+  /database/employers/active:
+    get:
+      summary: Retrieve all active employers
+      description: Returns a list of all employers in the database where the `isActive` flag is set to true.
+      tags:
+        - Employers
+      responses:
+        200:
+          description: A list of active employers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The unique identifier for the employer.
+                      example: 1
+                    name:
+                      type: string
+                      description: The short name of the employer.
+                      example: "Tech Innovations Inc."
+                    email:
+                      type: string
+                      description: The email of the employer.
+                      example: "contact@techinnovations.com"
+                    isActive:
+                      type: boolean
+                      description: Indicates whether the employer is active.
+                      example: true
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: A message indicating an error occurred.
+                    example: "Internal Server Error!"
+
+
+  /database/employers/{empid}:
+    get:
+      summary: Retrieve a specific employer by ID
+      description: Returns a single employer based on the provided employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to retrieve.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A single employer object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employer"
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+    put:
+      summary: Update an existing employer by ID
+      description: Updates the details of an employer in the database based on the provided employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to update.
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                new_shortname:
+                  type: string
+                  description: The new shortname of the employer.
+                  example: "Tech Innovations LLC"
+                new_fullname:
+                  type: string
+                  description: The new fullname of the employer.
+                  example: "Technicacl Innovations Limited Liability Corporation in Germany at Berlin Institute of Technology GmbH"
+                new_website:
+                  type: string
+                  description: The new website of the employer.
+                  example: "https://techinnovationsllc.com"
+                new_emails:
+                  type: string[]
+                  description: The new contact email of the employer.
+                  example: ["contact@techinnovationsllc.com"]
+      responses:
+        200:
+          description: Employer updated successfully
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+    delete:
+      summary: Delete a specific employer by ID
+      description: Deletes an employer from the database based on the provided employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to delete.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: Employer deleted successfully
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+  
+  /database/employers/{empid}/blacklist:
+    get:
+      summary: Retrieve the blacklist for an employer
+      description: Fetches all blacklisted URLs for the given employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to retrieve the blacklist for.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A list of blacklisted URLs for the employer.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: "https://example.com/blacklisted-url"
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+    put:
+      summary: Update the blacklist for an employer
+      description: Updates the blacklist for the given employer by adding or removing URLs.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer whose blacklist will be updated.
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                urls:
+                  type: array
+                  items:
+                    type: string
+                  description: List of URLs to update the blacklist.
+                  example: ["https://example.com/bad-url", "https://malware-site.com"]
+      responses:
+        200:
+          description: Blacklist updated successfully.
+        400:
+          description: Invalid input data
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/employers/{empid}/whitelist:
+    get:
+      summary: Retrieve the whitelist for an employer
+      description: Fetches all whitelisted URLs for the given employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to retrieve the whitelist for.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A list of whitelisted URLs for the employer.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: "https://example.com/whitelisted-url"
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+    put:
+      summary: Update the whitelist for an employer
+      description: Updates the whitelist for the given employer by adding or removing URLs.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer whose whitelist will be updated.
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                urls:
+                  type: array
+                  items:
+                    type: string
+                  description: List of URLs to update the whitelist.
+                  example: ["https://example.com/good-url", "https://trusted-site.com"]
+      responses:
+        200:
+          description: Whitelist updated successfully.
+        400:
+          description: Invalid input data
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/locations:
+      post:
+        summary: Create a new location
+        description: Adds a new location to the database.
+        tags:
+          - Locations
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  street:
+                    type: string
+                    description: The street address of the location.
+                    example: "123 Main St"
+                  housenumber:
+                    type: string
+                    description: The house number of the location.
+                    example: "5"
+                  postalcode:
+                    type: string
+                    description: The postal code of the location.
+                    example: "12345"
+                  city:
+                    type: string
+                    description: The city where the location is situated.
+                    example: "Metropolis"
+        responses:
+          200:
+            description: Location created successfully
+            content:
+              application/json:
+                schema:
+                  type: integer
+                  example: 1
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+      get:
+        summary: Retrieve all locations
+        description: Fetches a list of all locations stored in the database.
+        tags:
+          - Locations
+        responses:
+          200:
+            description: A list of locations
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Location"
+          500:
+            $ref: "#/components/schemas/InternalError"
+
+  /database/locations/{locationid}:
+    get:
+      summary: Retrieve a specific location by ID
+      description: Returns a single location from the database based on the provided location ID.
+      tags:
+        - Locations
+      parameters:
+        - in: path
+          name: locationid
+          required: true
+          description: The ID of the location to retrieve.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A single location object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+        404:
+          description: Location not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+    put:
+      summary: Update a location
+      description: Updates the details of an existing location identified by location ID.
+      tags:
+        - Locations
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          description: The unique identifier for the location to be updated.
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                new_street:
+                  type: string
+                  description: The new street address of the location.
+                  example: "456 Elm St"
+                new_housenumber:
+                  type: string
+                  description: The new house number of the location.
+                  example: "10"
+                new_postalcode:
+                  type: string
+                  description: The new postal code of the location.
+                  example: "54321"
+                new_city:
+                  type: string
+                  description: The new city where the location is situated.
+                  example: "Gotham"
+      responses:
+        200:
+          description: Location updated successfully
+        404:
+          description: Location not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+    delete:
+      summary: Delete a location
+      description: Deletes a location identified by the location ID.
+      tags:
+        - Locations
+      parameters:
+        - name: locationid
+          in: path
+          required: true
+          description: The unique identifier for the location to be deleted.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: Location deleted successfully
+        404:
+          description: Location not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/websites:
+    post:
+      summary: Create a new website
+      description: Creates a new website and sends the created website details as the response.
+      tags:
+        - Websites
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                joburl:
+                  type: string
+                  description: The URL of the job website.
+                  example: "https://example.com/jobs"
+                etag:
+                  type: string
+                  description: The ETag of the website, used for caching.
+                  example: "W/\"1234567890\""
+                hash:
+                  type: string
+                  description: The hash of the website content for validation.
+                  example: "abcdef123456"
+                lastmodified:
+                  type: string
+                  format: date-time
+                  description: The last modified date of the website.
+                  example: "2024-10-14T12:00:00Z"
+      responses:
+        200:
+          description: Website created successfully
+          content:
+           application/json:
+                schema:
+                  type: integer
+                  example: 1
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+    get:
+      summary: Retrieve all websites
+      description: Retrieves all website records and sends them as a JSON array.
+      tags:
+        - Websites
+      responses:
+        200:
+          description: A list of all websites.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/websites/{websiteid}:
+    put:
+      summary: Update a website by its ID
+      description: Updates the details of a website by providing a new URL, ETag, hash, and last modified date.
+      tags:
+        - Websites
+      parameters:
+        - in: path
+          name: websiteid
+          required: true
+          schema:
+            type: integer
+          description: The ID of the website to be updated.
+          example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                new_joburl:
+                  type: string
+                  description: The updated URL of the job website.
+                  example: "https://example.com/newjob"
+                new_etag:
+                  type: string
+                  description: The updated ETag for caching.
+                  example: "W/\"0987654321\""
+                new_hash:
+                  type: string
+                  description: The updated hash of the website content.
+                  example: "xyz987654"
+                new_lastmodified:
+                  type: string
+                  format: date-time
+                  description: The updated last modified date.
+                  example: "2024-10-14T15:00:00Z"
+      responses:
+        200:
+          description: The website was successfully updated.
+        404:
+          description: Website not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/websites/joburl:
+    put:
+      summary: Retrieve a website by Job URL
+      description: Retrieves the details of a website by providing its Job URL.
+      tags:
+        - Websites
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                joburl:
+                  type: string
+                  description: The Job URL to find the website by.
+                  example: "https://example.com/jobs"
+      responses:
+        200:
+          description: The website that matches the provided Job URL.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 1
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/websites/upsertbyjoburl:
+    post:
+      summary: Insert or update a website by job URL
+      description: Inserts a new website entry or updates the existing one based on the provided job URL, ETag, last modified date, and hash.
+      tags:
+        - Websites
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                joburl:
+                  type: string
+                  description: The job URL of the website.
+                  example: "https://example.com/jobposting"
+                etag:
+                  type: string
+                  description: The ETag value for caching.
+                  example: "W/\"1234567890\""
+                lastmodified:
+                  type: string
+                  format: date-time
+                  description: The last modified date of the website.
+                  example: "2024-10-14T15:00:00Z"
+                hash:
+                  type: string
+                  description: The hash value of the website content.
+                  example: "abc123xyz"
+      responses:
+        200:
+          description: The website was successfully inserted or updated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /database/keyword/{employerid}:
+    get:
+      summary: Retrieve Keywords for an Employer
+      description: Retrieves the list of keywords associated with the given employer ID.
+      tags:
+        - Keywords
+      parameters:
+        - in: path
+          name: employerid
+          required: true
+          description: The ID of the employer whose keywords are being retrieved.
+          schema:
+            type: integer
+            example: 123 
+      responses:
+        200:
+          description: Successfully retrieved the keywords for the employer.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EmployerKeywordLocation"  
+        404:
+          description: No keywords found for the given employer ID.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Keywords not found for this employer"
+        500:
+          description: Internal Server Error. There was an issue retrieving the data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Internal Server Error!"
+
+  /api/jobs:
+    post:
+      summary: filters jobs with specific criteria
+      description: Searches for a jobs with specific filtering options returns all corresponding Jobs from the database.
+      tags:
+        - Jobs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employernames:
+                  type: string[]
+                  description: The names of Employers
+                  example: [ "UFZ", "test" ]
+                specialty:
+                  type: string[]
+                  description: The specialties
+                  example: [ "engineering", "medicine" ]
+                language:
+                  type: string
+                  description: Language
+                  example: "de"
+                sortmode: 
+                  type: string
+                  description: ApplicationDeadline, Title, usw.
+                  example: "Title"
+                sortorder: 
+                  type: string
+                  description: can be either ASC or DESC
+                  example: "ASC"
+                searchterm: 
+                  type: string
+                  description: Title to be searched
+
+      responses:
+        200:
+          description: A list of jobs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/jobs/{jobid}:
+    get:
+      summary: Retrieve a specific job by ID
+      description: Returns a single job from the database based on the provided job ID.
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: jobid
+          required: true
+          description: The ID of the job to retrieve.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A single job object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/tool/jobs:
+    get:
+      summary: Retrieve ValidationKey, Title of all jobs
+      tags:
+        - Jobs
+      responses:
+        200:
+          description: A single job object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/employers:
+    get:
+      summary: Retrieve all employers
+      description: Returns a list of all employers in the database.
+      tags:
+        - Employers
+      responses:
+        200:
+          description: A list of employers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employer"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/employers/{empid}:
+    get:
+      summary: Retrieve a specific employer by ID
+      description: Returns a single employer based on the provided employer ID.
+      tags:
+        - Employers
+      parameters:
+        - in: path
+          name: empid
+          required: true
+          description: The ID of the employer to retrieve.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A single employer object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employer"
+        404:
+          description: Employer not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/employers/distinct:
+    get:
+      summary: Retrieve all distinc employer FullName
+      description: Returns a list of employer FullName in the database.
+      tags:
+        - Employers
+      responses:
+        200:
+          description: A list of employers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employer"
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/locations/{locationid}:
+    get:
+      summary: Retrieve a specific location by ID
+      description: Returns a single location from the database based on the provided location ID.
+      tags:
+        - Locations
+      parameters:
+        - in: path
+          name: locationid
+          required: true
+          description: The ID of the location to retrieve.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: A single location object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+        404:
+          description: Location not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+  /api/jobs/validation/{key}:
+    get:
+      summary: Retrieve a specific Job by Validation Key
+      description: Returns a single Job from the database based on the provided Validation Key.
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: key
+          required: true
+          description: The 24 Char long Validation Key of the Job to retrieve
+          schema:
+            type: string
+            example: "ri13jfkeiejfirj1394Jfiro"
+      responses:
+        200:
+          description: A single Job object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+  /api/jobs/validation/{jobid}:
+    put:
+      summary: Updates the title, description and application deadline of the Job with validated version
+      tags:
+        - Jobs
+      parameters:
+        - in: path
+          name: key
+          required: true
+          description: The 24 Char long Validation Key to delete from Database
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                valid_title:
+                  type: string
+                  description: Validated Title
+                  example: "Research worker for Berlin Researchs GmbH"
+                valid_description:
+                  type: string
+                  description: Validated Description
+                  example: "Research in Berlin institute of Technology, Full-Time, 14-days of paid vacation a year."
+                valid_tasks:
+                  type: array
+                  description: Validated Tasks
+                  items:
+                    type: string
+                  example: ["Organisation", "IT-Computing"]
+                valid_deadline:
+                  type: string
+                  description: Valid application deadline
+                  example: "2024-11-15"
+                valid_specialty:
+                  type: array
+                  description: Validated Specialty
+                  items:
+                    type: string
+                  example: ["Bildung", "Wirtschaft und Recht", "Andere"]
+      responses:
+        200:
+          description: The Job has been validated
+        404:
+          description: A Job with given is not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+  /api/jobs/filter:
+    post:
+      summary: filters jobs with specific criteria
+      description: Searches for a jobs with specific filtering options returns all corresponding Jobs from the database.
+      tags:
+        - Jobs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employersnames:
+                  type: string[]
+                  description: The names of Employers
+                  example: [ "UFZ", "test" ]
+                specialty:
+                  type: string[]
+                  description: The specialties
+                  example: [ "engineering", "medicine" ]
+                language:
+                  type: string
+                  description: Language
+                  example: "de"
+
+      responses:
+        200:
+          description: A list of jobs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Job"
+        500:
+          $ref: "#/components/schemas/InternalError"
+  /api/privileges/{key}:
+    get:
+      summary: Checks whether a key exists in Privilege table
+      description: Sends Status OK if exists, NOT_FOUND if it does not.
+      tags:
+        - Privilege
+      parameters:
+        - in: path
+          name: key
+          required: true
+          description: The 24 Char long Privilege key
+          schema:
+            type: string
+      responses:
+        200:
+          description: Privilege exists
+        404:
+          description: Job not found
+        500:
+          $ref: "#/components/schemas/InternalError"
+
+components:
+  schemas:
+    Job:
+      type: object
+      properties:
+        JobID:
+          type: integer
+          example: 1
+        EmployerID:
+          type: integer
+          example: 1
+        LocationID:
+          type: integer
+          example: 1
+        WebsiteID:
+          type: integer
+          example: 1
+        Title:
+          type: string
+          example: "Software Developer"
+        Description:
+          type: string
+          example: "Responsible for developing and maintaining software applications."
+        ValidationKey:
+          type: string
+          example: "kriKjjfeiUrnfhjrk23Hfk23"
+        created_at:
+          type: string
+          format: date-time
+          example: "2024-10-14T09:00:00.000Z"
+        Employer:
+          $ref: "#/components/schemas/Employer"
+        Website:
+          $ref: "#/components/schemas/Website"
+        Location:
+          $ref: "#/components/schemas/Location"
+
+    Employer:
+      type: object
+      properties:
+        EmployerID:
+          type: integer
+          example: 1
+        ShortName:
+          type: string
+          example: "TechCorp"
+        FullName:
+          type: string
+          example: "Technical Corporation & Partners GmbH. Germany, Berlin"
+        Website:
+          type: string
+          nullable: true
+          example: "https://www.techcorp.com"
+        Email:
+          type: string
+          nullable: true
+          example: "contact@techcorp.com"
+        created_at:
+          type: string
+          format: date-time
+          example: "2024-10-10T08:00:00.000Z"
+
+    Location:
+      type: object
+      properties:
+        LocationID:
+          type: integer
+          example: 1
+        Street:
+          type: string
+          nullable: true
+          example: "123 Tech Street"
+        HouseNumber:
+          type: string
+          nullable: true
+          example: "22"
+        PostalCode:
+          type: string
+          nullable: true
+          example: "10001"
+        City:
+          type: string
+          nullable: true
+          example: "New York"
+        created_at:
+          type: string
+          format: date-time
+          example: "2024-09-20T07:30:00.000Z"
+
+    Website:
+      type: object
+      nullable: true
+      properties:
+        WebsiteID:
+          type: integer
+          example: 1
+        JobURL:
+          type: string
+          example: "https://www.jobsite.com/job/123"
+        ETag:
+          type: string
+          example: "a1b2c3d4"
+        Hash:
+          type: string
+          example: "e5f6g7h8"
+        LastModified:
+          type: string
+          example: "2024-10-01T15:45:00.000Z"
+
+    InternalError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Internal Server Error!"
+
+
+

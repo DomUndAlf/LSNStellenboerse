@@ -1,0 +1,8 @@
+* text=auto eol=crlf
+
+# Exclude binary files from normalization
+*.ico -text
+*.pdf -text
+*.png -text
+*.jpg -text
+*.html -text

@@ -1,0 +1,112 @@
+stages:
+  - build
+
+build_frontend:
+  stage: build
+  image: node:21
+  script:
+    - echo "Building Frontend"
+    - cd Source/DCNMJobPortal/Frontend
+    - npm ci --omit=dev
+    - CI=false npm run build
+    - cd build/static/js
+    - sed -i 's|http://localhost:4010/api/jobs|http://141.57.11.6/api/jobs|g' main*.js
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/Frontend/build
+  # tags:
+  #   - image
+
+build_validation_website:
+  stage: build
+  image: node:21
+  script:
+    - echo "Building Validation Website"
+    - cd Source/DCNMJobPortal/ValidationWebsite
+    - npm install
+    - CI=false npm run build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/ValidationWebsite/build
+  # tags:
+  #   - image
+
+build_ai_service:
+  stage: build
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/AI_Service
+    - npm ci --omit=dev
+    - npx tsc
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/AI_Service/dist
+  # tags:
+  #   - image
+
+build_database_handler:
+  stage: build
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/DatabaseHandler
+    - npm ci --omit=dev
+    - npx tsc
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/DatabaseHandler/dist
+  # tags:
+  #   - image
+
+
+build_web_agent:
+  stage: build
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/WebAgent
+    - npm ci --omit=dev
+    - npx tsc
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/WebAgent/dist
+  # tags:
+  #   - image
+
+build_validation:
+  stage: build
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/Validation
+    - npm ci --omit=dev
+    - npx tsc
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/Validation/dist
+  # tags:
+  #   - image
+
+build_scheduler_service:
+  stage: build
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/SchedulerService
+    - npm ci --omit=dev
+    - npx tsc
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  artifacts:
+    paths:
+      - Source/DCNMJobPortal/SchedulerService/dist
+  # tags:
+  #   - image

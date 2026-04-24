@@ -1,0 +1,203 @@
+= 1. DCNM Stellenboerse (L2)
+
+== 2. Members
+- Stehling Dirk     Thorben     ID:631  https://gitlab.dit.htwk-leipzig.de/thorben_dirk.stehling[@thorben_dirk.stehling]
+- Fischer           Dominique   ID:1130 https://gitlab.dit.htwk-leipzig.de/dominique.fischer[@dominique.fischer ]
+- Buyandelger 	    Batbuyan    ID:1070 https://gitlab.dit.htwk-leipzig.de/batbuyan.buyandelger[@batbuyan.buyandelger ]
+- Hobelsberger 	    Robert      ID:1004 https://gitlab.dit.htwk-leipzig.de/robert.hobelsberger[@robert.hobelsberger]
+- Schwabe 	        Marie       ID:916  https://gitlab.dit.htwk-leipzig.de/marie.schwabe[@marie.schwabe ]
+- Zakharevych 	    Artem       ID:1094 https://gitlab.dit.htwk-leipzig.de/artem.zakharevych[@artem.zakharevych ]
+- Essar Rhini 	    Ilyass      ID:923  https://gitlab.dit.htwk-leipzig.de/ilyass.essar_rhini[@ilyass.essar_rhini ]
+- Qobty (Mahamid) 	Mahmod      ID:1112 https://gitlab.dit.htwk-leipzig.de/mahmod.qobty_mahamidnk[@mahmod.qobty_mahamid ]
+- Guo 	            Junyu       ID:1069 https://gitlab.dit.htwk-leipzig.de/junyu.guo[@junyu.guo ]
+- Westerheide 	    Louis       ID:1179 https://gitlab.dit.htwk-leipzig.de/louis.westerheide[@louis.westerheide]
+- Nguyen 	        Lam         ID:868  https://gitlab.dit.htwk-leipzig.de/lam.nguyen[@lam.nguyen]
+- Mager 	        Max         ID:805  https://gitlab.dit.htwk-leipzig.de/max.mager[@max.mager]
+- Antonov 	        Vladislav   ID:806  https://gitlab.dit.htwk-leipzig.de/vladislav.antonov[@vladislav.antonov]
+
+== 3. Pilot
+
+=== 3.1 Link und Beschreibung
+- http://141.57.11.6/[Aktuelle Version des Piltos]
+Der Pilot ist aktuell nur über die Hochschul VPN oder innerhalb des Hochschulnetz erreichbar. Dort liegt die aktuelle Release Version als Vorschau und zum Ausprobieren zur Verfügung.
+Anmerkung: Es kann sein, dass für die Nutzung des Piloten die Einstellung des Browsers für die Website so angepasst werden müssen, dass unsichere Inhalte zugelassen werden.
+
+Auf der aktuellen Version des Piloten werden die Jobangebote aus der Datenbank angezeigt. Diese können durch betätigen des Buttons alphabetisch auf- oder absteigend sortiert werden. Durch Clicken auf die Stellenangebote wird eine detaillierte Ansicht angezeigt, welche vorerst noch mit größten Teils statischen Daten gefüllt ist. Der Jobtitel wird jedoch aus der Datenbank genommen und dort dargestellt.
+
+=== 3.2 Dockerfile
+
+==== Zu den Dockerfiles:
+
+Um den neuesten Stand unserer Software zu testen, müssen folgende Schritte unternommen werden:
+- `docker login`
+- `docker pull`
+- `docker-compose up`
+
+==== Vorab:
+
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Build/docker-compose.yml
+
+Diese Datei muss heruntergeladen werden. Anschließend per Shell in den Ordner navigieren, wo sich diese befindet.
+
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/.env.global
+
+Die .env.global muss ebenfalls im selben Ordner liegen und .env benannt werden (ist nur für das lokale Testen notwendig, sie wird in der Pipeline automatisch übergeben)
+
+Zum Testen der OpenAI Funktionalität muss hier noch ein OpenAI-Key hinzugefügt werden. Auch dies ist nur hier notwendig, nicht auf dem Server.
+
+==== Login:
+
+Damit das Ausführen der `docker-compose.yml` funktioniert, muss sich zuerst über
+`docker login gitlab.dit.htwk-leipzig.de:5050`
+angemeldet werden. Dies kann über Zugangsdaten oder einen angelegten Access Token geschehen.
+
+==== Docker Pull:
+
+Um die neuesten Container aus unserem Projekt zu ziehen, muss nun
+`docker-compose pull`
+im selben Ordner ausgeführt werden, wo auch die `docker-compose.yml` liegt.
+
+==== Docker-compose:
+
+Die `docker-compose.yml` Datei muss über
+`docker compose up -d`
+ausgeführt werden.
+
+Nachdem dies gestartet worden ist, kann über `localhost:80` auf den neuesten Stand der Software zugegriffen werden. (Selten muss der Befehl noch einmal ausgeführt werden, nur lokal notwendig)
+
+Unter http://141.57.11.6/ kann (wenn im Hochschulnetz oder per VPN verbunden) auch der derzeitige Stand unserer Software angeschaut werden (siehe 3.1).
+
+==== Testen der Funktionalitäten:
+
+Sobald die Container laufen, kann per
+`docker-compose exec backend sh`
+der Backend Container „benutzt“ werden. 
+
+Hierbei spannend: Mail-Client & OpenAI-Titel-Abfrage.
+
+==== Vorab:
+
+Um hier besser arbeiten zu können, empfehlen wir die Installation eines Texteditors, hier Nano:
+
+apt-get update
+apt-get install -y nano
+
+==== Mail Client:
+
+Über `dist/Email/` gelangen wir zu der Datei `SendMail.js`. Diese mit nano öffnen.
+
+Anschließend bei `MAIL_OPTIONS` die `to:` Adresse ändern zur gewünschten Zieladresse (z.B. „louis.westerheide@stud.htwk-leipzig.de“).
+
+Nach jetzigem Ausführen mit `node SendMail.js` wird eine Nachricht an die angegebene E-Mail-Adresse gesendet. Dies kann kurz dauern!
+
+==== OpenAI:
+
+Zum Benutzen der automatischen Jobtitel Abfrage über OpenAI und die Speicherung dieser Daten innerhalb der Datenbank navigieren wir zu `dist/WebScraper`.
+
+Anschließend kann `crawlerController.js` mit einer passenden URL (Beispiele folgend) ausgeführt werden über `node crawlerController.js`. Anschließend wird aufgefordert eine passende URL einzugeben. Darauffolgend wird automatisch der Titel aus der Jobbeschreibung extrahiert, in die Datenbank eingepflegt und beim Neuladen von `localhost:3000` sehen wir das Ergebnis gespeichert auf der Seite.
+
+==== Beispiel URLs:
+https://recruitingapp-5128.de.umantis.com/Vacancies/2993/Description/1
+https://recruitingapp-5128.de.umantis.com/Vacancies/2996/Description/1
+https://recruitingapp-5128.de.umantis.com/Vacancies/3000/Description/1
+
+==== Links zu den Dateien:
+
+.gitlab-ci.yml:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/.gitlab-ci.yml
+
+dazugehörige Pipelines:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/tree/main/Build
+
+==== Dockerfiles:
+
+Frontend:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/Frontend/Dockerfile
+
+Backend:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/Backend/Dockerfile
+
+
+=== 3.3 GitLab Action
+Unter https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Build/release.yml?ref_type=heads ist die aktuelle release Pipeline zu sehen. Sobald auf den main Branch eine merge erfolgt wird diese getriggert und ausgeführt. Alle anderen Pipelines (bereits verlinkt worden) reagieren derzeit ebenfalls auf ein merge Event auf den main.
+
+
+== 4. Projektinformationen
+
+=== 4.1 Problemdefinition und Produktvision
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-3:-Synthese/Ausf%C3%BChrliche-Problemdefinition[Nachvollziehbare Problemdefinition]
+- Die aktuelle Produktvision: Akademiker Paare können in die Region Mitteldeutschland kommen und gemeinsam Stellen in der Wissenschaft finden.
+
+=== 4.2 Design-Thinking-Prototypen
+Die Prototypen bieten die Grundlage zur Implementierung des Projekts, wobei einzelne Punkte nach einem Gespräch mit Herrn Schaefer/Prof. Both angepasst wurden, 
+welche https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design%20Thinking/Schritt-6:-Testen[hier]
+festgehalten wurden.
+
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Darstellungs-Prototyp[Darstellungs Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Eingabemaske-Prototyp[Eingabemaske Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Pull-Ansatz-Prototyp[Pull Ansatz Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Suche-Prototyp[Suche Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Webcrawler[Webcrawler]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/MVP-Definition[Webcrawler Erweitert]
+
+Der https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design%20Thinking/MVP%20Definition[MVP] fasst diese Prototypen nochmal zusammen.
+
+=== 4.3 Erfüllte Anforderungen
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/240
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/188
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/186
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/185
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/162
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/104
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/100
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/94
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/93
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/92
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/91
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/90
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/89
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/88
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/87
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/82
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/81
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/65
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/21
+
+== 5. Besondere Aktivitäten/Beiträge
+Es gibt bestimmte Aktivitäten, die nicht als eigenständige Issues erfasst wurden, sondern stattdessen als Zeiten bei den dazugehörigen Tickets notiert wurden. Dazu zählen Aufgaben wie Unterstützung beim Entwicklungsprozess, Refinements für die Tickets oder Code Reviews.
+
+Die Refinements wurden hauptsächlich vom QA-Team durchgeführt, insbesondere von Junyu und Max, aber auch von Vladi, falls keiner von beiden verfügbar war. Max und Vladi haben ebenfalls viel Unterstützung bei der Bearbeitung der Tickets geleistet, was einen entsprechenden Zeitaufwand erforderte. Ausführliche Code Reviews wurden vor allem von Max, Vladi und Dominique durchgeführt.
+
+Die Rolle von Junyu als QA ist ebenfalls nicht zu vernachlässigen. Sie war nicht nur für die Refinements verantwortlich, sondern auch für das Testen und die Abnahme von Merge Requests sowie für das Erstellen von Testfällen und -protokollen. Ihre Zeiten wurden ebenfalls den Issues zugeordnet und werden zukünftig als eigene Issues in den Sprint eingeplant.
+
+Das von Robert bearbeitete Ticket wurde komplexer als ursprünglich geplant und sollte mit beachtet werden: https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/93[ETag-Auswertungsfunktion]. Ursprünglich war nur geplant eine einfache E-Tag Auswertefunktion zu schreiben. Es stellte sich dann aber heraus, dass die meisten Seiten keinen E-Tag liefern. Nach Rücksprache mit Prof. Both wurde dann entschieden das TIcket um folgende Funktinalitäten zu erweitern:
+
+- ETag vorhanden, dann wird dieses mit vorherigen verglichen
+- last-modified vorhanden, dann wird dieses mit vorherigen verglichen
+- sitemap vorhanden, dann wird in dieser nach dem last-modified Tag gesucht und mit vorherigen verglichen
+- keines der drei Elemente vorhanden, dann wird die Webseite in einem Intervall gescraped. Zusätzlich wird am 
+Anfang zu jedem Body der Webseiten ein einzigartiger Hash erstellt, welcher dann als Fallback (4.) zum Vergleich benutzt wird
+
+Aufgrund der erweiterten Funktionalitäten hat das Issue einen gesamten Sprint (2 Wochen), also in etwa 21 Storypoints eingenommen, anstatt des ursprünglichen Plans von 8 Storypoints.
+
+Marie und Max haben die Abgabe vorbereitet und die Artefakte zusammengetragen und Beschreibungen ergänzt.
+
+Jeden zweiten Donnerstag schließen wir unseren internen 2 Wöchigen Sprint ab, wo wir unsere Ergebnisse dem Kunden vorstellen. Danach planen wir zusammen den nächsten Sprint. Dabei besprechen wir die Issues und erweitern diese um Untertasks. Am darauf folgenden Dienstag führen wir unsere Retro durch, an der ebenfalls jeder teilnimmt. Diese Zeiten werden nicht getrackt, aber jeder im Team nimmt aktiv Teil und trägt zu einem guten Verständnis der Aufgaben bei.
+
+== 6. Projektleitdokumentation
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/roles_and_responsibilities.adoc[Roles and Responsibilities]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/project_description.adoc[Projektdescription]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/follow_up_register.adoc[Follow-up-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/challenge_register.adoc[Challenge-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/health_register.adoc[Health-Register]
+
+== 7. Storypoints Sprint2
+Wir nennen die Abgabe zum Sprint2, Abgabe2 so wird sie auch im Text weiter genannt. Unsere Sprints sind nur 2 Wochen lang. Daher haben wir für die Abgabe2, zwei Sprints durch geführt Sprint1 und Sprint2. (Sprint bezieht sich hier auf unsere internen 2 Wochen Sprints)
+
+Für Sprint1 haben wir folgdende Issues geschafft: #85, #91, #92, #86, #81, #82.
+Dies entspricht 37 Storypoints.
+
+Für Sprint2 haben wir folgende Issues geschafft: #83, #21, #87, #231, #162, #93, #94, #89, #90, #184, #88, #100, #166, #186, #247, #246, #104, #185, #240, #188.
+Dies entspricht 143 Storypoints.
+
+Damit wurde in beiden Sprints/in der Abgabe2 180 Storypoints geschafft. 

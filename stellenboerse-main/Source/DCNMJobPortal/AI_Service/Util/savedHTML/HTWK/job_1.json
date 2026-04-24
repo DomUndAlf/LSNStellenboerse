@@ -1,0 +1,16 @@
+{
+  "jobTitle": "Wissenschaftliche Mitarbeiterin oder Wissenschaftlicher Mitarbeiter zur Promotion im Tandem-Modell (w/m/d)",
+  "jobDescription": "Die HTWK Leipzig wurde 1992 gegründet und ist mit ihren über 6.000 Studierenden nicht nur die größte, sondern auch eine der führenden Hochschulen für Angewandte Wissenschaften im Freistaat Sachsen. Das Leitbild aufgreifend, verfolgt sie das Ziel, sich auf der Basis wissenschaftlicher, regionaler, internationaler und sozialer Vernetzung zu einer europäischen Spitzenhochschule für Angewandte Wissenschaften zu entwickeln. Die Fakultät Informatik und Medien widmet sich in ihren Lehr- und Forschungsschwerpunkten der Herstellung, Verbreitung und Vermittlung klassischer und neuer Medien sowie der Entwicklung von medialen und digitalen Technologien in Informatik, Druck- und Medientechnik. Die Bandbreite der Studiengänge bietet eine große Auswahl an unterschiedlichen Zugängen zu Medien und spiegelt deren zahlreiche Beziehungen zu Wirtschaft, Gesellschaft und Kultur. Die Forschungsgruppe „Web & Software Engineering“ (WSE)an der HTWK Leipzig widmet sich der Entwicklung und Optimierung moderner Web- und Softwarearchitekturen. Unter der Leitung von Prof. Dr. Andreas Both, der seit 2022 an der HTWK Leipzig tätig ist, liegt der Fokus der Gruppe auf der Anwendung von Künstlicher Intelligenz (KI) im Bereich des Software Engineerings, datengetriebenen Prozessen, Question-Answering-Systemen sowie sicheren Softwarearchitekturen. Ziel der Tätigkeit dort ist die wissenschaftliche Qualifizierung (Promotion). Die promotionsstelle ermöglicht den Bewerbenden, sich wissenschaftlich zu qualifizieren und gleichzeitig die Arbeit in der Praxis zu erleben.",
+  "jobTasks": [
+    "wissenschaftliche Arbeit am Promotionsprojekt mit Schwerpunkt auf AI-gestützte Lernsysteme;",
+    "Erforschung aktueller Trends in der adaptiven Lerntechnologie, maschinelles Lernen, Large Language Models und Generative AI;",
+    "Beteiligung an der Entwicklung eines modular aufgebauten, KI-gestützten interaktiven Tutors, der verschiedene Wissensdomänen, wie z. B. Automatisierung im Vertrieb, abdeckt;",
+    "Zusammenarbeit mit externen Partnern und Anwendern zur Integration von Anforderungen und zur Validierung von Prototypen in realen Anwendungsszenarien;",
+    "Anwendung moderner KI-Technologien, wie maschinelles Lernen, Retrieval-Systeme und Wissensmanagement, mit dem Ziel, eine flexible und skalierbare System­architektur zu entwickeln;",
+    "Sicherstellung der Einhaltung datenschutzrechtlicher Anforderungen und Implementierung sicherer Mechanismen zur Datenverarbeitung sowie",
+    "Veröffentlichung wissenschaftlicher Arbeiten."
+  ],
+  "applicationDeadline": "2024-11-17",
+  "language": "de",
+  "specialty": ["Ingenieurwissenschaften", "MINT", "Wirtschaftswissenschaften"]
+}

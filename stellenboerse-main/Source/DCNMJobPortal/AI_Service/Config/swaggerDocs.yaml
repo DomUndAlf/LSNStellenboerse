@@ -1,0 +1,221 @@
+openapi: "3.1.0"
+info:
+  title: "AI API"
+  version: "1.0.0"
+  description: "API for AI Service"
+servers:
+  - url: "http://localhost:4040"
+
+paths:
+  /aiagent/extract:
+    post:
+      summary: Extract information from a website using AI extractor.
+      description: This endpoint takes a URL and website ID, and then uses the AI extractor to retrieve and process data from the website. If successful, it returns a success message along with the URL.
+      tags:
+        - AI Extractor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - URL
+                - websiteId
+                - employerId
+              properties:
+                URL:
+                  type: string
+                  description: The URL of the website to extract information from.
+                  example: "https://recruitingapp-5128.de.umantis.com/Vacancies/3088/Description/2"
+                websiteId:
+                  type: integer
+                  description: The ID of the website for identification purposes. Based on the websiteID a Job is created or updated.
+                  example: 1
+                employerId:
+                  type: integer
+                  description: The ID of the Employer for identification purposes.
+                  example: 1
+      responses:
+        200:
+          description: Website extracted successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message.
+                    example: Webseite extracted successfully
+                  URL:
+                    type: string
+                    description: The URL of the extracted website.
+                    example: "https://example.com"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message.
+                    example: Internal Server Error!
+                  details:
+                    type: string
+                    description: Detailed error information.
+                    example: "An unknown error occurred"
+  /aiagent/pdf:
+    post:
+      summary: Extract information from a website using AI extractor.
+      tags:
+        - AI Extractor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  description: The URL of the website to extract information from.
+                  example: "https://www.dbfz.de/fileadmin/user_upload/Stellen/2024/Stellenausschreibung_WiMa_Trennverfahrn_fuer_biobasierte_Produkte_20241030_01.pdf"
+                websiteId:
+                  type: integer
+                  description: The ID of the website for identification purposes. Based on the websiteID a Job is created or updated.
+                  example: 1
+                employerId:
+                  type: integer
+                  description: The ID of the Employer for identification purposes.
+                  example: 1
+      responses:
+        200:
+          description: Website extracted successfully.
+        500:
+          description: Internal Server Error
+  /aiagent/classify:
+    post:
+      summary: Classify URLs as job postings or non-job postings.
+      description: |
+        This endpoint takes an array of URLs and uses AI to classify them as job postings or not.
+        It returns the classified URLs as two separate lists: job URLs and non-job URLs.
+      tags:
+        - AI Classifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                urls:
+                  type: array
+                  items:
+                    type: string
+                  description: The list of URLs to classify.
+                  example:
+                    - "https://example.com/job1"
+                    - "https://example.com/about"
+      responses:
+        200:
+          description: URLs classified successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobUrls:
+                    type: array
+                    items:
+                      type: string
+                    description: List of URLs classified as job postings.
+                    example:
+                      - "https://example.com/job1"
+                  otherUrls:
+                    type: array
+                    items:
+                      type: string
+                    description: List of URLs not classified as job postings.
+                    example:
+                      - "https://example.com/about"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message.
+                    example: "Internal Server Error!"
+  /aiagent/embedded/scrape:
+    post:
+      summary: Scrape embedded job URLs from a given website.
+      description: |
+        This endpoint scrapes job URLs from embedded job boards on a given website using Selenium.
+        It expects a `website` field in the request body and returns the extracted job URLs on success.
+      tags:
+        - Embedded Scraper
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - website
+              properties:
+                website:
+                  type: string
+                  description: The URL of the embedded job board to scrape.
+                  example: "https://www.burg-halle.de/institution/stellenausschreibungen"
+      responses:
+        200:
+          description: Job URLs scraped successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message.
+                    example: Scraped embedded job URLs successfully
+                  data:
+                    type: array
+                    items:
+                      type: string
+                    description: List of scraped job URLs.
+                    example:
+                      - "https://example.com/job1"
+                      - "https://example.com/job2"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message.
+                    example: Website URL is required
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message.
+                    example: Failed to scrape embedded job URLs
+                  details:
+                    type: string
+                    description: Detailed error information.
+                    example: An unexpected error occurred during scraping.

@@ -1,0 +1,183 @@
+{
+  "UFZ": [
+    "https://recruitingapp-5128.de.umantis.com/Vacancies/3090/Description/1",
+    "https://recruitingapp-5128.de.umantis.com/Vacancies/3088/Description/2",
+    "https://recruitingapp-5128.de.umantis.com/Vacancies/3080/Description/1",
+    "https://recruitingapp-5128.de.umantis.com/Vacancies/3097/Description/1",
+    "https://recruitingapp-5128.de.umantis.com/Vacancies/3093/Description/1"
+  ],
+  "HGB": ["https://stellen.hgb-leipzig.de/jobposting/58320e79dee61a8b54cf00b4555405438736d9620"],
+
+  "Frauenhofer-IZI": [
+    "https://jobs.fraunhofer.de/job/Leipzig-IT-Spezialistin-zur-Entwicklung-und-Betreuung-einer-digitalen-Chargendokumentationslösung-%28MODA-ES%29-04103/1138561601/",
+    "https://jobs.fraunhofer.de/job/Leipzig-Initiativbewerbung-als-Doktorandin-04103/1030377701/",
+    "https://jobs.fraunhofer.de/job/Leipzig-Mitarbeiterin-im-IT-Support-04103/1131482201/"
+  ],
+  "Frauenhofer-IMW": [
+    "https://jobs.fraunhofer.de/job/Halle-%28Saale%29-Wissenschaftliche-Hilfskraft-für-das-Center-for-Economics-and-Management-of-Technologies-06108/1103329001/",
+    "https://jobs.fraunhofer.de/job/Leipzig-Studentische-Hilfskraft-im-Bereich-Data-driven-and-impact-oriented-Entrepreneurship-research-04109/1127174301/"
+  ],
+
+  "HTWK": [
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-weitere-stellenanzeigen/artikel/wissenschaftliche-mitarbeiterin-oder-wissenschaftlicher-mitarbeiter-zur-promotion-im-tandem-modell-w-m-d-1",
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-weitere-stellenanzeigen/artikel/administrator-oder-administratorin-zentrale-systeme-w-m-d",
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-weitere-stellenanzeigen/artikel/mitarbeiterin-oder-mitarbeiter-experimental-digitallabor-architektur-w-m-d",
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-fuer-stellenangebote-professorales-personal/artikel/stellenangebot-professur-w2-betriebswirtschaftslehre-insbesondere-personalmanagement",
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-fuer-stellenangebote-professorales-personal/artikel/stellenangebot-professur-w2-verteilte-systeme",
+    "https://www.htwk-leipzig.de/hochschule/stellenangebote/professorales-personal/detailseite-fuer-stellenangebote-professorales-personal/artikel/stellenangebot-professur-w2-elektrische-energiespeichersysteme-und-grundlagen-der-elektrotechnik"
+  ],
+  "Leibniz-jGK": [
+    "https://www.dubnow.de/ausschreibung/visiting-research-fellowship-programm-des-dubnow-instituts-2025-26",
+    "https://www.dubnow.de/ausschreibung/wissenschaftlicher-mitarbeiter-w-m-d-ignaz-goldziher-programm-fuer-juedisch-muslimische-studien"
+  ],
+  "Leibniz-IOM": [
+    "https://www.iom-leipzig.de/karriere/stellenangebote/jobs-details.html?tx_ttnews%5Btt_news%5D=62&cHash=d77b80058dc0c532523637b780a05a0b"
+  ],
+
+  "Leibniz-Tropos": [
+    "https://www.tropos.de/institut/beruf-karriere/details/studentische-hilfskraft-m-w-d-ka-fuer-den-it-bereich-programmierung"
+  ],
+  "Max-Planck-EVA": [
+    "https://www.eva.mpg.de/de/karriere/stellenangebote/job/626/International%20Max%20Planck%20Research%20School/en/?cHash=81d92625315882d04b4d245d6ce3f2a1",
+    "https://www.eva.mpg.de/de/karriere/stellenangebote/job/637/Abteilung%20Verhalten%20und%20Evolution%20von%20Primaten/en/?cHash=5d0a46c1e35c63fe6b43d3425e7e0e7b",
+    "https://www.eva.mpg.de/de/karriere/stellenangebote/job/631/Abteilung%20Sprach-%20und%20Kulturevolution/en/?cHash=1da09d6706161cdde24f1d169c1baa67",
+    "https://www.eva.mpg.de/de/karriere/stellenangebote/job/633/Abteilung%20Sprach-%20und%20Kulturevolution/en/?cHash=c578b715f832e3921e2430c635171025",
+    "https://www.eva.mpg.de/de/karriere/stellenangebote/job/629/Abteilung%20Evolutionäre%20Genetik/en/?cHash=b4bed3998c7fb7b5661dd44832b693c4"
+  ],
+  "Stadt-Leipzig": [
+    "https://karriere.leipzig.de/stellenangebote/detail/projekt/heilerziehungspflegerin-heilerziehungspfleger-im-wohnheim-am-kirschberg-1-1-2-2-1",
+    "https://karriere.leipzig.de/stellenangebote/detail/projekt/wissenschaftliche-r-volontaer-in-im-bereich-oeffentlichkeitsarbeit-m-w-d",
+    "https://karriere.leipzig.de/stellenangebote/detail/projekt/zwei-auszubildende-m-w-d-zur-fachkraft-fuer-veranstaltungstechnik",
+    "https://karriere.leipzig.de/stellenangebote/detail/projekt/ingenieur-in-versorgungs-und-gebaeudetechnik-m-w-d-2",
+    "https://karriere.leipzig.de/stellenangebote/detail/projekt/referentin-referent-des-buergermeisters-m-w-d-1"
+  ],
+  "Studentenwerk-Leipzig": [
+    "https://www.studentenwerk-leipzig.de/jobs/lagerverwalterin-w-m-d/",
+    "https://www.studentenwerk-leipzig.de/jobs/koechin-kalte-kueche-w-m-d/",
+    "https://www.studentenwerk-leipzig.de/jobs/mensa-cafeteria-mitarbeiterinnen-w-m-d/",
+    "https://www.studentenwerk-leipzig.de/jobs/teamleiterin-studienfinanzierung-bafoeg-w-m-d-2/",
+    "https://www.studentenwerk-leipzig.de/jobs/haustechnikerinnen-fuer-mensen-und-cafeterien-w-m-d/"
+  ],
+  "HMT-Leipzig": [
+    "https://stelle.pro/jobposting/c384358f2a3d673b374ef4b00c9cf715683666500",
+    "https://stelle.pro/jobposting/ca0a4647704af4d2f93669bdfe745cf09de906dc0"
+  ],
+  "DBFZ": [
+    "https://www.dbfz.de/fileadmin/user_upload/Stellen/2024/Stellenausschreibung_WiMa_Trennverfahrn_fuer_biobasierte_Produkte_20241030_01.pdf"
+  ],
+  "Uni-Halle": [
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/24_4_6234_24_H_neu2.pdf",
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/24_7_190_24_H.pdf",
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/24_7_216_24_D.pdf"
+  ],
+  "Uni-Klinik-Leipzig": [
+    "https://www.uniklinikum-leipzig.de/stellenangebote/JobOfferDocuments/00007860_00000007.pdf",
+    "https://www.uniklinikum-leipzig.de/stellenangebote/JobOfferDocuments/00007942_00000002.pdf",
+    "https://www.uniklinikum-leipzig.de/stellenangebote/JobOfferDocuments/00007939_00000002.pdf"
+  ],
+  "OttoVonGuericke": [
+    "https://ovgu.b-ite.careers/jobposting/3f9fec3b0dd112196e0f7ef629f840d5246b09b50?ref=homepage",
+    "https://ovgu.b-ite.careers/jobposting/ccc76f569ecb1e8638b0cbe3c6369c3e26042ae50?ref=homepage",
+    "https://ovgu.b-ite.careers/jobposting/ca4efd203add6ad18eb30fc30f155e06718bd0900?ref=homepage",
+    "https://ovgu.b-ite.careers/jobposting/0ef926a73ca47eaa6e80d3818ff04541af1045810?ref=homepage",
+    "https://ovgu.b-ite.careers/jobposting/f12eec331a4344b7df9ffb48246a97ca0bc5f4b60?ref=homepage"
+  ],
+  "Hochschule-Merseburg": [
+    "https://www.hs-merseburg.de/hochschule/information/neuigkeiten/details/professur-soziale-arbeit-und-drogen/",
+    "https://www.hs-merseburg.de/hochschule/information/neuigkeiten/details/professur-angewandte-kuenstliche-intelligenz/",
+    "https://www.hs-merseburg.de/hochschule/information/neuigkeiten/details/leiter-w-m-d-der-nachwuchsgruppe-bio-rohstoffe-sozialwissenschaftliche-akzeptanzforschung-refnr-098-2024/",
+    "https://www.hs-merseburg.de/hochschule/information/neuigkeiten/details/lehrkraft-fuer-besondere-aufgaben-w-m-d-im-fachgebiet-kunststofftechnik-polymerverarbeitung-refnr-104-2024/",
+    "https://www.hs-merseburg.de/hochschule/information/neuigkeiten/details/laboringenieur-physikalische-chemie-und-verfahrenstechnik-mechanische-und-thermische-prozesse-m-w-d-refnr-103-2024/"
+  ],
+  "Landeshauptstadt-Magdeburg": [""],
+  "HZDR": [
+    "https://www.hzdr.de/db/Cms?pNid=490&pOid=73607&pContLang=en",
+    "https://www.hzdr.de/db/Cms?pNid=490&pOid=73686&pContLang=de",
+    "https://www.hzdr.de/db/Cms?pNid=490&pOid=73509&pContLang=en",
+    "https://www.hzdr.de/db/Cms?pNid=490&pOid=73627&pContLang=en"
+  ],
+  "Senckenberg": ["https://www.senckenberg.de/de/karriere/fachkraefte/#content-0004_1"],
+  "SKD": [
+    "https://jobs.skd.museum/stellenangebot.html?yid=227",
+    "https://jobs.skd.museum/stellenangebot.html?yid=238",
+    "https://jobs.skd.museum/stellenangebot.html?yid=223",
+    "https://jobs.skd.museum/stellenangebot.html?yid=240"
+  ],
+  "TU-Dresden": [
+    "https://www.verw.tu-dresden.de/StellAus/stelle.asp?id=11889&lang=en&style=cms2",
+    "https://www.verw.tu-dresden.de/StellAus/stelle.asp?id=11880&lang=de&style=cms2",
+    "https://www.verw.tu-dresden.de/StellAus/stelle.asp?id=11855&lang=de&style=cms2",
+    "https://www.verw.tu-dresden.de/StellAus/stelle.asp?id=11879&lang=de&style=cms2",
+    "https://www.verw.tu-dresden.de/StellAus/stelle.asp?id=11878&lang=de&style=cms2"
+  ],
+  "UKD": [
+    "https://karriere.ukdd.de/job/Dresden-Logop%C3%A4dein/1139589255/",
+    "https://karriere.ukdd.de/job/Dresden-IT-Systemadministratorin/1142742755/",
+    "https://karriere.ukdd.de/job/Dresden-Medizinischer-Technologischer-Laborassistenz/1142923655/",
+    "https://karriere.ukdd.de/job/Dresden-Facharzt-%C3%A4rztin-f%C3%BCr-Thoraxchirurgie-%28wmd%29/1139411155/",
+    "https://karriere.ukdd.de/job/Dresden-Dokumentationsassistenz/1142650155/"
+  ],
+  "Uni-Erfurt": [
+    "https://jobs.uni-erfurt.de/jobposting/9d4b0370f30ee92a351b26ad706910dee39df2a80",
+    "https://www.uni-erfurt.de/universitaet/arbeiten-an-der-universitaet/stellenausschreibungen/78-2024-w2-professorship-with-career-track-to-w3-in-modern-german-literature-f-m-d",
+    "https://jobs.uni-erfurt.de/jobposting/10014440511de5066ec8293fdc27dd01a871caaa0",
+    "https://jobs.uni-erfurt.de/jobposting/8fe9c17548e769509661564031d54140565844f90"
+  ],
+  "IPK": [
+    "https://www.ipk-gatersleben.de/en/career/job-offers/job-offer/postdoktorandin-w-m-d",
+    "https://www.ipk-gatersleben.de/en/career/job-offers/job-offer/assistenz-w-m-d-der-geschaeftsstelle-am-ipk",
+    "https://www.ipk-gatersleben.de/en/career/job-offers/job-offer/ausbildung-zum-zur-elektronikerin-fuer-geraete-und-systeme-w-m-d-fuer-das-ausbildungsjahr-2025",
+    "https://www.ipk-gatersleben.de/en/career/job-offers/job-offer/gaertnerische-saisonkraefte-w-m-d",
+    "https://www.ipk-gatersleben.de/en/career/job-offers/job-offer/wissenschaftlich-technischer-assistentin-w-m-d"
+  ],
+  "Kunst-Halle": [
+    "https://service.burg-halle.de/qisserver/rds?state=change&type=2&moduleParameter=bwmSearchResult&nextdir=sva/bwmsas&next=DetailView.vm&sas.sas_serial=248&sqlmode=update&subdir=sva/bwm&comingfromselection=y&menuid=&P_anzahl=100&P_start=0&topitem=qissvaCareer&subitem=svabwmstellenuebersicht&termdisplayonly=y&view=1&asi=",
+    "https://service.burg-halle.de/qisserver/rds?state=change&type=2&moduleParameter=bwmSearchResult&nextdir=sva/bwmsas&next=DetailView.vm&sas.sas_serial=249&sqlmode=update&subdir=sva/bwm&comingfromselection=y&menuid=&P_anzahl=100&P_start=0&topitem=qissvaCareer&subitem=svabwmstellenuebersicht&termdisplayonly=y&view=1&asi="
+  ],
+  "IAMO": [
+    "https://www.iamo.de/fileadmin/user_upload/Bilder_und_Dokumente/06-karriere/01-stellenangebote_stipendien/2024-11-18_Hiwi_PR.pdf"
+  ],
+  "IPB": [
+    "https://www.ipb-halle.de/karriere/stellenangebote/joboffer-detail/wissenschaftliche-r-mitarbeiter-in-fightblight-bioengineering-von-immunrezeptoren-zur-resistenz-gegen-die-kartoffelfaeule-mwd-272024/",
+    "https://www.ipb-halle.de/karriere/stellenangebote/joboffer-detail/auszubildende-r-biologielaborant-in-gaertner-in-oder-kauffrau-mann-fuer-bueromanagement-mwd-252024/"
+  ],
+  "Martin-Luther-UniHalle": [
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/25_3_184_25_D.pdf",
+    "https://wcms.itz.uni-halle.de/download.php?down=69375&elem=3585695",
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/25_5_12748_24_H_engl.pdf",
+    "https://www.verwaltung.uni-halle.de/dezern3/Ausschr/24_5_12693_24_D.pdf"
+  ],
+  "Stadt-Halle": [
+    "https://stadt-halle.stellen.center/7EWTLYJAJ/abteilungsleiter-friedhofe-mwd-e-12-tvod-5162024",
+    "https://stadt-halle.stellen.center/BT9MEM4PU/sachbearbeiter-baucontrolling-mwd-e-7-tvod-5742024",
+    "https://stadt-halle.stellen.center/3DMH8MHC5/sachbearbeiter-beistandurkundsperson-mwd-e-9c-tvod-5032024",
+    "https://stadt-halle.stellen.center/9BCGQ4NRC/sachbearbeiter-fahrerlaubnisentziehungeignungsprufung-mwd-e-9a-tvod-3662024",
+    "https://stadt-halle.stellen.center/RK4R967D2/sachbearbeiter-investitionscontrolling-mwd-e-9b-tvod-4252024"
+  ],
+  "Fridrich-Schiller-Uni-Jena": [
+    "https://jobs.uni-jena.de/jobposting/14b53dc36855f7997e964e41243ee185448faf220",
+    "https://jobs.uni-jena.de/jobposting/0551c7ead4f45fe4dce7d9fa04736bfdd246c48a0",
+    "https://jobs.uni-jena.de/jobposting/a817664ce95534c6090264f3402275ce910f7fab0",
+    "https://jobs.uni-jena.de/jobposting/87284bb090311c5afec592fcab8a2f42fe7213a20",
+    "https://jobs.uni-jena.de/jobposting/513a57513fa41971043b9c852e00a072f64fd12c0",
+    "https://jobs.uni-jena.de/jobposting/7d4ed5dc1136111c687eed229ba19d7a2b7836f60"
+  ],
+  "Leibniz-Institut-fuer-Alernsforschung-FLI": [
+    "https://jobs.leibniz-fli.de/jobposting/9bdbf1df0fd826df696679754fcfd4aa70a919d20?ref=homepage",
+    "https://jobs.leibniz-fli.de/jobposting/094a997fde3ae3517f2589d0185f1e1afcc7a42e0?ref=homepage"
+  ],
+  "Hochschule-Anhalt": [
+    "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote/leiter-it-service-center-m-w-d-nr-412.html",
+    "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote/professur-medizintechnik-bes-gr-w-2.html",
+    "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote/projektmitarbeiter-m-w-d-multifaktorauthentifizierung-nr-407.html",
+    "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote/wissenschaftlicher-mitarbeiter-m-w-d-im-bereich-digitale-technologien-in-der-pflanzenproduktion-nr-409.html",
+    "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote/wissenschaftlicher-mitarbeiter-m-w-d-im-bereich-pflanzenproduktion-nr-410.html"
+  ],
+  "Hochschule-Magdeburg-Stendal-H2": [
+    "https://karriere.hs-magdeburg.de/jobposting/af15608db16731b22949cc3fa88cfb8bca2eab640?ref=homepage",
+    "https://karriere.hs-magdeburg.de/jobposting/ee898fb132c7c84fd5a719908d2a100f0df873af0?ref=homepage",
+    "https://karriere.hs-magdeburg.de/jobposting/97a6d4d98e8cfea3e0f17b53e25984528ab074780?ref=homepage",
+    "https://karriere.hs-magdeburg.de/jobposting/e7a9c6f32151748292e5b0e49082555bf2fef2100?ref=homepage",
+    "https://karriere.hs-magdeburg.de/jobposting/7c80fcc723a0cd3696436cf695c6ba57d543446c0?ref=homepage"
+  ]
+}

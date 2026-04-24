@@ -1,0 +1,13 @@
+{
+  "jobTitle": "Abschlussarbeit (Master) - Die Rolle der Hydrolyse bei der Schaumbildung während der anaeroben Vergärung",
+  "jobDescription": "Das Helmholtz-Zentrum für Umweltforschung – UFZ hat sich mit seinen 1100 Mitarbeiterinnen und Mitarbeitern als internationales Kompetenzzentrum für Umweltwissenschaften einen hervorragenden Ruf erworben. Wir sind Teil der größten Wissenschaftsorganisation Deutschlands – der Helmholtzgemeinschaft. Unsere Mission: Wir forschen für eine Balance zwischen gesellschaftlicher Entwicklung und langfristigem Schutz unserer Lebensgrundlagen – für eine nachhaltige Entwicklung. Die Stelle Flexible und bedarfsorientierte Energieerzeugung durch Biogasanalgen kann durch den Einsatz leicht abbaubarer Substrate erreicht werden. Allerdings geht der Einsatz dieser Substrate mit einem erhöhten Risiko der Schaumbildung in Biogasanlagen einher, was zu erheblichen wirtschaftlichen Einbußen führen kann. Bisherige Prozessüberwachungs-parameter reichen nicht aus, um die Ursachen der Schaumbildung umfassend zu erklären oder frühzeitig zu erkennen. Zudem spiegeln sie die Störungen in der Hydrolysephase, die eine Schlüsselrolle im gesamten Vergärungsprozess spielt, nicht wider. Ziel der Arbeit ist es, die Rolle der Hydrolysestufe im Prozess der Vergärung zu untersuchen, insbesondere im Zusammenhang mit der Schaumbildung. Ein Schwerpunkt liegt auf der Messung und Analyse der Aktivitäten ausgewählter hydrolytischer Enzyme im Batch- und kontinuierlichen Betrieb. Basierend auf den Ergebnissen wird ein besseres Verständnis der Rolle der hydrolytischen Enzyme erzielt, sodass Handlungsempfehlungen für den Einsatz von Enzymzusätzen abgeleitet werden können. Die Stelle zur Erstellung der Masterarbeit wird am Standort in Leipzig betreut.",
+  "jobTasks": [
+    "Literaturrecherche zur Bestimmung der enzymatischen Aktivitäten im Biogasprozess",
+    "Analyse der Aktivitäten von ausgewählten hydrolytischen Enzymen im batch Prozess",
+    "Analyse der Aktivitäten von ausgewählten hydrolytischen Enzymen im semi-kontinuierlichen Betrieb (Technikumsbiogasanlage)",
+    "Ableitung von Gegenstrategien bei Schaumbildung auf Basis der erzielten Ergebnisse"
+  ],
+  "applicationDeadline": "2024-11-15",
+  "language": "de",
+  "specialty": ["MINT", "Andere"]
+}

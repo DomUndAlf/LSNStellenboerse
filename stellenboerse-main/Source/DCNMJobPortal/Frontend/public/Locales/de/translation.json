@@ -1,0 +1,119 @@
+{
+  "title": {
+    "location": "Arbeitsort",
+    "employer": "Arbeitgeber",
+    "deadline": "Bewerbungsfrist",
+    "language": "Sprache",
+    "specialty": "Fachrichtung"
+  },
+
+  "disclaimer": {
+    "title": "Hinweis",
+    "aiContent": "KI-aufbereiteter Inhalt. Rechtlich bindend ist nur die",
+    "originalAd": "Original-Stellenanzeige",
+    "liability": "Keine Gewähr für die Richtigkeit der Angaben.",
+    "externalLinkNotice": "Mit dem Klick auf Links in diesem Fenster verlassen Sie unsere Webseite."
+  },
+
+  "contact": {
+    "info": "Kontaktinformationen",
+    "goToAd": "Zur Stellenanzeige",
+    "employer": "Arbeitgeber",
+    "contact": "Kontakt",
+    "contactPerson": "Ansprechperson",
+    "email": "E-Mail",
+    "link": "Link zu Stellenanzeige",
+    "location": "Arbeitsort",
+    "addressTBA": "Genaue Adresse wird noch bekanntgegeben"
+  },
+  "description": {
+    "origin": "Zur Original Webseite",
+    "requirements": "Anforderungen",
+    "benefits": "Benefits",
+    "moreInfo": "Weitere Informationen",
+    "tasks": "Aufgaben / Schwerpunkte"
+  },
+  "jobListFrame": {
+    "ads": "Karriere Portal Mitteldeutschland",
+    "adsFound": "Stellen gefunden",
+    "language": "DE",
+    "noJobsFound": "Keine Jobs gefunden",
+    "serverError": "Interner Server Error",
+    "loading": "Lädt...",
+    "noJobsFoundFIlter": "mit diesen Filtern wurden keine Stellen gefunden"
+  },
+  "jobListItems": {
+    "deadline": "Bewerbungsfrist:",
+    "created": "Erstellt am: ",
+    "location": "Arbeitsort",
+    "employer": "Arbeitgeber",
+    "language": "Sprache",
+    "creation": "Erstellungsdatum",
+    "dead": "Bewerbungsfrist"
+  },
+  "specialtys": {
+    "Geistes- und Sozialwissenschaften": "Geistes- und Sozialwissenschaften",
+    "Ingenieurwissenschaften": "Ingenieurwissenschaften",
+    "Kultur, Kunst, Musik": "Kultur, Kunst, Musik",
+    "Medizin, Gesundheit, Psychologie": "Medizin, Gesundheit, Psychologie",
+    "MINT": "MINT",
+    "Rechtswissenschaften": "Rechtswissenschaften",
+    "Wirtschaftswissenschaften": "Wirtschaftswissenschaften",
+    "Nicht-wissenschaftliche Berufe": "Nicht-wissenschaftliche Berufe",
+    "Andere": "Andere"
+  },
+  "searchBar": {
+    "search": "Suchen",
+    "filter": "Filter",
+    "open": "öffnen",
+    "close": "schließen",
+    "language": "Sprache",
+    "pick": "Auswählen...",
+    "de": "Deutsch",
+    "en": "Englisch",
+    "distance": "Entfernung",
+    "specialty": "Fachrichtung",
+    "socialScience": "Geistes- und Sozialwissenschaften",
+    "engineering": "Ingenieurwissenschaften",
+    "culture": "Kultur, Kunst, Musik",
+    "health": "Medizin, Gesundheit, Psychologie",
+    "mint": "MINT (Mathematik, Informatik, Naturwissenschaften, Technik)",
+    "law": "Rechtswissenschaften",
+    "economics": "Wirtschaftswissenschaften",
+    "nonAcademic": "Nicht-wissenschaftliche Berufe",
+    "other": "Andere",
+    "sort": "Sortierung",
+    "createdDate": "Erstellungsdatum",
+    "deadline": "Bewerbungsfrist",
+    "actFilter": "Aktive Filter",
+    "buzzword": "Stichwortsuche...",
+    "employer": "Arbeitgeber",
+    "applicationDateASC": "Bewerbungsfrist aufsteigend",
+    "applicationDateDESC": "Bewerbungsfrist absteigend",
+    "releaseDateASC": "Veröffentlichungsdatum aufsteigend",
+    "releaseDateDESC": "Veröffentlichungsdatum absteigend"
+  },
+  "filterEmployer": {
+    "searchForEmployer": "Arbeitgeber suchen...",
+    "showAll": "alle anzeigen",
+    "employer": "Arbeitgeber",
+    "resetSelection": "Auswahl zurücksetzen",
+    "resetAll": "Alle zurücksetzen"
+  },
+  "toast": {
+    "searchTermAdded": "Suchbegriff hinzugefügt",
+    "searchTermRemoved": "Suchbegriff entfernt",
+    "specialtyChanged": "Fachrichtung geändert",
+    "specialtyRemoved": "Fachrichtung entfernt",
+    "languageChanged": "Sprache geändert",
+    "languageRemoved": "Sprache entfernt",
+    "employerAdded": "Arbeitgeber hinzugefügt",
+    "employerRemoved": "Arbeitgeber entfernt",
+    "sortChanged": "Sortierung geändert",
+    "filterApplied": "Filter angewendet",
+    "filtersChanged": "Filter geändert",
+    "filtersCleared": "Alle Filter entfernt",
+    "jobFound": "Stelle gefunden",
+    "jobsFound": "Stellen gefunden"
+  }
+}

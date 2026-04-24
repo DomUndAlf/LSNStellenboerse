@@ -1,0 +1,93 @@
+stages:
+  - test
+
+test_Frontend:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/Frontend
+    - npm install
+    - npm test -- -u
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_ValidationWebsite:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/ValidationWebsite
+    - npm install
+    - npm test -- -u
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_WebAgent:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/WebAgent
+    - npm install
+    - npm test
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_Validation:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/Validation
+    - npm install
+    - npm test
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_DBHandler:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/DatabaseHandler
+    - npm install
+    - npm test
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_AI:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/AI_Service
+    - npm install
+    - npm test
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+test_scheduler:
+  stage: test
+  image: node:21
+  script:
+    - cd Source/DCNMJobPortal/SchedulerService
+    - npm install
+    - npm test
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always

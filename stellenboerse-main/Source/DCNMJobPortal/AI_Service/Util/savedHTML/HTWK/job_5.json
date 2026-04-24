@@ -1,0 +1,14 @@
+{
+  "jobTitle": "Professur (W2) \"Verteilte Systeme\"",
+  "jobDescription": "Die HTWK Leipzig wurde 1992 gegründet und ist mit ihren über 6.000 Studierenden nicht nur die größte, sondern auch eine der führenden Hochschulen für Angewandte Wissenschaften im Freistaat Sachsen. Das Leitbild aufgreifend, verfolgt sie das Ziel, sich auf der Basis wissenschaftlicher, regionaler, internationaler und sozialer Vernetzung zu einer europäischen Spitzenhochschule für Angewandte Wissenschaften zu entwickeln. Die Fakultät Ingenieurwissenschaften forscht und lehrt in den Bereichen Maschinenbau, Elektro- und Informationstechnik sowie Energie-, Gebäude- und Umwelttechnik. Das Studium ist durch die enge Verzahnung von Lehre, Forschung und Praxis geprägt - Studierende erhalten praxisbezogene Einblicke in moderne Berufsfelder und können innovative Forschungsprojekte entwickeln. Die Forschung an der Fakultät basiert auf langjähriger Erfahrung in der angewandten Forschung. Unsere Wissenschaftlerinnen und Wissenschaftler sind dabei Projektpartner in Forschung und Entwicklung für Unternehmen, die sich den herausfordernden Fragestellungen aktueller und zukünftiger Technologien widmen. Gesucht wird eine Persönlichkeit, die das Berufungsgebiet mit den folgenden Schwerpunkten in Lehre und Forschung vertritt: Die Professur übernimmt Lehrveranstaltungen in den Studiengängen Elektrotechnik und Informationstechnik sowie Wirtschaftsingenieurwesen/Elektrotechnik. Neben Lehrveranstaltungen in den genannten Schwerpunkten beteiligt sie sich in der Informatikgrundausbildung in den genannten Studiengängen. Zu den Aufgaben der Stelleninhaberin/des Stelleninhabers gehört auch die vertretungsweise Übernahme von Lehrveranstaltungen im Grundlagenstudium und in verwandten Fachgebieten. Weitere Aufgaben der Professur sind die Betreuung von Praktika sowie studentischen Projekten, Forschung auf dem Berufungsgebiet, die Einwerbung von Drittmittelprojekten und die Betreuung des wissenschaftlichen Nachwuchses.",
+  "jobTasks": [
+    "verteilte Softwaresysteme und deren Eigenschaften (Fehlertoleranz, Ressourcenverteilung, Skalierbarkeit, Transparenz, Virtualisierung, Zuverlässigkeit);",
+    "Hardware-Architekturen für verteilte Systeme (Cloud und Edge Computing);",
+    "eingebettete Systeme und ihre Betriebssysteme;",
+    "Kommunikation in verteilten Systemen sowie",
+    "Internet of Things (IoT)"
+  ],
+  "applicationDeadline": "2025-01-05",
+  "language": "de",
+  "specialty": ["Ingenieurwissenschaften", "MINT"]
+}

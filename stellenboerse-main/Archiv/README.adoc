@@ -1,0 +1,117 @@
+= 1. DCNM Stellenboerse (L2)
+
+
+== 2. Members
+- Stehling Dirk     Thorben     ID:631  https://gitlab.dit.htwk-leipzig.de/thorben_dirk.stehling[@thorben_dirk.stehling]
+- Fischer           Dominique   ID:1130 https://gitlab.dit.htwk-leipzig.de/dominique.fischer[@dominique.fischer ]
+- Buyandelger 	    Batbuyan    ID:1070 https://gitlab.dit.htwk-leipzig.de/batbuyan.buyandelger[@batbuyan.buyandelger ]
+- Hobelsberger 	    Robert      ID:1004 https://gitlab.dit.htwk-leipzig.de/robert.hobelsberger[@robert.hobelsberger]
+- Schwabe 	        Marie       ID:916  https://gitlab.dit.htwk-leipzig.de/marie.schwabe[@marie.schwabe ]
+- Zakharevych 	    Artem       ID:1094 https://gitlab.dit.htwk-leipzig.de/artem.zakharevych[@artem.zakharevych ]
+- Essar Rhini 	    Ilyass      ID:923  https://gitlab.dit.htwk-leipzig.de/ilyass.essar_rhini[@ilyass.essar_rhini ]
+- Qobty (Mahamid) 	Mahmod      ID:1112 https://gitlab.dit.htwk-leipzig.de/mahmod.qobty_mahamidnk[@mahmod.qobty_mahamid ]
+- Guo 	            Junyu       ID:1069 https://gitlab.dit.htwk-leipzig.de/junyu.guo[@junyu.guo ]
+- Westerheide 	    Louis       ID:1179 https://gitlab.dit.htwk-leipzig.de/louis.westerheide[@louis.westerheide]
+- Nguyen 	        Lam         ID:868  https://gitlab.dit.htwk-leipzig.de/lam.nguyen[@lam.nguyen]
+- Mager 	        Max         ID:805  https://gitlab.dit.htwk-leipzig.de/max.mager[@max.mager]
+- Antonov 	        Vladislav   ID:806  https://gitlab.dit.htwk-leipzig.de/vladislav.antonov[@vladislav.antonov]
+
+== 3. Design-Thinking-Prozess
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-1:-Verstehen[Schritt 1: Verstehen]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-2:-Beobachten[Schritt 2: Beobachten]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-3:-Synthese[Schritt 3: Synthese]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-4:-L%C3%B6sungsideen-finden[Schritt 4: Lösungsideen finden]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping[Schritt 5: Prototyping]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-6:-Testen[Schritt 6: Testen]
+
+=== 3.1 
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-3:-Synthese/Ausf%C3%BChrliche-Problemdefinition[Nachvollziehbare Problemdefinition]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design%20Thinking/Schritt%203:%20Synthese
+[Personas]
+
+
+=== 3.2 
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Darstellungs-Prototyp[Darstellungs Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Eingabemaske-Prototyp[Eingabemaske Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Pull-Ansatz-Prototyp[Pull Ansatz Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Suche-Prototyp[Suche Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Webcrawler[Webcrawler]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/MVP-Definition[Webcrawler Erweitert]
+
+In einer Besprechung mit Prof. Both gab er noch einen Impuls zu den Webcrawler-Prototypen. Da dies erst kurz vor der Vorstellung vor dem Kunden war, wurden diese Ideen nicht als weiterer Prototyp festgehalten. Nach dem Gespräch mit dem Kunden kam heraus, dass der Prototyp des erweiterten Webcrawlers zu favorisieren ist. Daher wurde dieser direkt als MVP eingepflegt.
+
+Folgende Punkte spielten bei der Entscheidung eine Rolle:
+Die Darstellung passt so weit und wurde nur minimal angepasst. Die Filterung passt auch so weit, die Priorisierung dieser wurde nur klargestellt. Die Entscheidung für den erweiterten Webcrawler wurde getroffen, weil dieser den geringsten Aufwand für die Mitglieder des DCNM ist. Zusätzlich ist er Stück für Stück erweiterbar, sodass ein minimaler MVP mit diesem Ansatz möglich ist. Ebenfalls bietet dieser Ansatz eine Validationsmöglichkeit für die Daten.  Auch für die Entwicklerseite ist es besser, da sie eventuelle neu erscheinende Felder nicht selbst aktualisieren müssen.
+
+Ausführliches Feedback vom Kunden welches zu der Entscheidung beigetragen hat, unter https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-6:-Testen[Schritt 6: Testen].
+
+=== 3.3 
+
+- Als Arbeitssuchender möchte ich einen gesammelten Überblick über lokale wissenschaftliche Stellenausschreibungen erhalten, um mich in einer 
+unbekannten Region besser orientieren zu können.
+
+- Als Arbeitssuchender möchte ich Jobangebote nach bestimmten Kriterien filtern und durchsuchen können, damit ich schnell und übersichtlich passende Stellen finde.
+
+- Als Arbeitssuchender mit unterschiedlichen Sprachkenntnissen möchte ich eine einfache Möglichkeit haben, englischsprachige Stellen anzeigen zu lassen, um Stellenangebote zu finden, die meinen Sprachfähigkeiten entsprechen.
+
+- Als Arbeitssuchender möchte ich den Suchvorgang mit so wenigen Klicks wie möglich durchführen können, um Zeit zu sparen und schnell relevante Stellenangebote zu finden.
+
+- Als Arbeitssuchender möchte ich die Jobangebote nach Pendelzeit sortieren und filtern können, um Stellenangebote zu finden, die eine für mich akzeptable Pendelzeit haben.
+
+- Als Organisation möchte ich meine offenen Stellen an einer zentralen Sammelstelle anzeigen lassen, um möglichst viele Kandidaten zu erreichen.
+
+- Als Organisation möchte ich meine Stellenangebote nicht doppelt eingeben müssen, um den Aufwand bei der Veröffentlichung von Stellenanzeigen zu minimieren.
+
+- Als Organisation möchte ich, dass die Plattform in der Lage ist, Stellenanzeigen aus unterschiedlichen Datenformaten und ohne einheitlichen Standard zu extrahieren, damit ich meine Daten mit möglichst wenig Aufwand bereitstellen kann.
+
+- Als Organisation möchte ich die Möglichkeit haben eine Stelle besonders hervorheben, damit wichtige Stellenangebote besonders auffallen.
+
+- Als LSN Geschäftsführer möchte ich die Diversität der Stellenangebote darstellen, um Mitteldeutschland als attraktive Region für Arbeitssuchende zu bewerben und mehr Suchende anzulocken.
+
+- Als Verwalter der Software von LSN möchte ich neue Institutionen einfach hinzufügen können, um die Plattform flexibel und erweiterbar zu gestalten.
+
+- Als Koordinatorin des DCNM möchte ich eine automatisierte und benutzerfreundliche Unterstützung erhalten, um Jobangebote für Arbeitssuchende zu finden, deren Partner bereits einen Job in Mitteldeutschland hat, damit ich effizient und zielgerichtet helfen kann.
+
+Zusätzlich wurden User Storys schon verfeinert und in Issues Festgehalten:
+
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/105
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/104
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/103
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/101
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/100
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/99
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/98
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/97
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/96
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/95
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/94
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/93
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/92
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/91
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/90
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/89
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/88
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/82
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/81
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/65
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/21
+
+=== 3.4
+Ziel ist es, eine Stellenbörse für LSN zu erstellen, die alle aktuellen Stellenausschreibungen der Mitgliedseinrichtungen übersichtlich und gebündelt darstellt. 
+Bisher sind die Stellenbörsen der einzelnen Mitglieder auf der Website des DCNM verlinkt. Zukünftig soll das Stellenbörsen-Modul jedoch auf der LSN-Website integriert und auf der DCNM-Website als iFrame eingebettet werden. Dies ermöglicht eine zentralisierte und benutzerfreundliche Plattform für Stellensuchende und Organisationen.
+
+Die Anzeigen sollen automatisiert und filterbar dargestellt werden und auch für englischsprachige Arbeitssuchende erkennbar sein, sofern die Stellenangebote dafür geeignet sind.
+Für die Mitgliedseinrichtungen soll so wenig Aufwand wie möglich anfallen. Daher macht es Sinn, die Informationen zu den Stellenangeboten direkt von den dazugehörigen Websites zu holen und in die Stellenbörse einzupflegen. Ein KI-basierter Web-Scraping-Ansatz erscheint dafür sinnvoll.
+
+== 4. Projektleitdokumentation
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/roles_and_responsibilities.adoc[Roles and Responsibilities]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/project_description.adoc[Projektdescription]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/follow_up_register.adoc[Follow-up-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/challenge_register.adoc[Challenge-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/health_register.adoc[Health-Register]
+
+== 5. Sprint 2
+Siehe <<sprint2.adoc#,Dokumentation für Sprint 2>>
+
+== 6. Sprint 3
+Siehe <<sprint3.adoc#,Dokumentation für Sprint 3>>

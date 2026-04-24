@@ -1,0 +1,30 @@
+openapi: "3.1.0"
+info:
+  title: "Validation API"
+  version: "1.0.0"
+  description: "API for Validation Service"
+servers: 
+  - url: "http://localhost:4020"
+
+paths:
+  /validation/email/{jobid}:
+    post:
+      summary: Send a validation E-Mail for a specific job
+      description: This endpoint sends a validation E-Mail to the associated employer's email address for a specific job.
+        In development mode, the email is sent to a developer email address defined in environment variables.
+      tags:
+        - Email
+      parameters:
+        - name: jobid
+          in: path
+          required: true
+          description: Job ID to send the validation E-Mail for
+          schema:
+            type: number
+      responses:
+        200:
+          description: Validation E-Mail was sent successfully
+        400:
+          description: Invalid input data
+        500:
+          description: Server error

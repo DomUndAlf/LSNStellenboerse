@@ -1,0 +1,203 @@
+# Optimierte Nginx-Konfiguration für Docker-Umgebung
+# Diese Konfiguration verhindert, dass Nginx abstürzt wenn Backend-Services beim Start nicht verfügbar sind
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    # DNS Resolver für Docker - ermöglicht dynamische Service-Auflösung
+    # 127.0.0.11 ist der eingebaute Docker DNS-Server
+    resolver 127.0.0.11 valid=10s ipv6=off;
+    resolver_timeout 5s;
+
+    map $arg_key $target_upstream {
+        default http://upstream_frontend;
+        ~.+    http://upstream_validation_website;
+    }
+
+    upstream upstream_frontend {
+        server frontend:3000 max_fails=3 fail_timeout=30s;
+        keepalive 32;
+    }
+
+    upstream upstream_validation_website {
+        server validation_website:3010 max_fails=3 fail_timeout=30s;
+        keepalive 32;
+    }
+
+    upstream upstream_database_handler {
+        server database_handler:4010 max_fails=3 fail_timeout=30s;
+        keepalive 32;
+    }
+
+
+    server {
+        listen 80;
+
+        # Erhöhte Timeouts für Backend-Services
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+        
+        # Connection Pooling
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+
+        location /api {
+            proxy_pass http://upstream_database_handler;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+        
+        location /validation {
+            proxy_pass http://upstream_validation_website;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            rewrite ^/validation(/.*)$ $1 break;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+
+        location / {
+            proxy_pass $target_upstream;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+        
+        # Health check endpoint
+        location /nginx-health {
+            access_log off;
+            return 200 "healthy\n";
+            add_header Content-Type text/plain;
+        }
+    }
+
+
+    server {
+        listen 8081;
+
+        # Erhöhte Timeouts für Backend-Services
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+        
+        # Connection Pooling
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+
+        location /api {
+            proxy_pass http://upstream_database_handler;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+        
+        location /validation {
+            proxy_pass http://upstream_validation_website;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            rewrite ^/validation(/.*)$ $1 break;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+
+        location / {
+            proxy_pass $target_upstream;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+    }
+
+    server {
+        listen 8082;
+
+        # Erhöhte Timeouts für Backend-Services
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+        
+        # Connection Pooling
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+
+        location /api {
+            proxy_pass http://upstream_database_handler;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+        
+        location /validation {
+            proxy_pass http://upstream_validation_website;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            rewrite ^/validation(/.*)$ $1 break;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+
+        location / {
+            proxy_pass $target_upstream;
+            proxy_set_header Host $host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Graceful Fehlerbehandlung
+            proxy_next_upstream error timeout http_502 http_503 http_504;
+            proxy_next_upstream_tries 2;
+        }
+    }
+ 
+
+}

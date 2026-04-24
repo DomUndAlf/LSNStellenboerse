@@ -1,0 +1,219 @@
+= 1. DCNM Stellenboerse (L2)
+
+== 2. Members
+- Stehling Dirk     Thorben     ID:631  https://gitlab.dit.htwk-leipzig.de/thorben_dirk.stehling[@thorben_dirk.stehling]
+- Fischer           Dominique   ID:1130 https://gitlab.dit.htwk-leipzig.de/dominique.fischer[@dominique.fischer ]
+- Buyandelger 	    Batbuyan    ID:1070 https://gitlab.dit.htwk-leipzig.de/batbuyan.buyandelger[@batbuyan.buyandelger ]
+- Hobelsberger 	    Robert      ID:1004 https://gitlab.dit.htwk-leipzig.de/robert.hobelsberger[@robert.hobelsberger]
+- Schwabe 	        Marie       ID:916  https://gitlab.dit.htwk-leipzig.de/marie.schwabe[@marie.schwabe ]
+- Zakharevych 	    Artem       ID:1094 https://gitlab.dit.htwk-leipzig.de/artem.zakharevych[@artem.zakharevych ]
+- Essar Rhini 	    Ilyass      ID:923  https://gitlab.dit.htwk-leipzig.de/ilyass.essar_rhini[@ilyass.essar_rhini ]
+- Qobty (Mahamid) 	Mahmod      ID:1112 https://gitlab.dit.htwk-leipzig.de/mahmod.qobty_mahamidnk[@mahmod.qobty_mahamid ]
+- Guo 	            Junyu       ID:1069 https://gitlab.dit.htwk-leipzig.de/junyu.guo[@junyu.guo ]
+- Westerheide 	    Louis       ID:1179 https://gitlab.dit.htwk-leipzig.de/louis.westerheide[@louis.westerheide]
+- Nguyen 	        Lam         ID:868  https://gitlab.dit.htwk-leipzig.de/lam.nguyen[@lam.nguyen]
+- Mager 	        Max         ID:805  https://gitlab.dit.htwk-leipzig.de/max.mager[@max.mager]
+
+== 3. MVP
+
+=== 3.1 Link zur Beschreibung
+
+** https://dcnm-stellen.imn.htwk-leipzig.de[Link zum MVP-Live-Server]
+
+Der MVP ist aktuell nur über das Hochschul-VPN oder innerhalb des Hochschulnetzes erreichbar. Dort liegt die aktuelle Release-Version zur Vorschau und zum Ausprobieren bereit.
+
+Anmerkung: Zum Anzeigen von Stellen muss derzeit im Browser "unsichere Inhalte" zugelassen werden. Dies liegt daran, dass das Backend nicht wie das Frontend auf HTTPS läuft.
+
+https://thewindowsclub.blog/de/how-to-add-trusted-sites-in-chrome-edge-firefox/[Anleitung für Edge, Chrome und Firefox]
+
+Auf der aktuellen Version des Piloten werden die Jobangebote aus der Datenbank angezeigt. Diese können durch Betätigen des blauen Buttons alphabetisch auf- oder absteigend sortiert werden. Durch Klicken auf die Stellenangebote wird eine detaillierte Ansicht angezeigt. Der Titel und die Beschreibung werden aus der Datenbank geladen und dynamisch für jeden Job angezeigt. Der Link zu der Originalstelle wird ebenfalls dynamisch geladen, die anderen Daten sind noch statische Platzhalter.
+
+=== 3.2 Dockerfile
+
+==== Zu den Dockerfiles:
+
+Um den neuesten Stand unserer Software zu testen, müssen folgende Schritte unternommen werden:
+- `docker login`
+- `docker pull`
+- `docker-compose up`
+
+==== Vorab:
+
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Build/docker-compose.yml
+
+Diese Datei muss heruntergeladen werden. Anschließend per Shell in den Ordner navigieren, in dem sich diese Datei befindet. Hierin werden die entsprechenden Container automatisiert bereitgestellt, die für das Zusammenspiel zwischen Frontend, Backend und der Datenbank benötigt werden.
+
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/.env.global
+
+Die `.env.global` muss ebenfalls im selben Ordner liegen und in `.env` umbenannt werden (nur für das lokale Testen notwendig, sie wird in der Pipeline automatisch übergeben).
+
+Zum Testen der OpenAI-Funktionalität muss hier noch ein OpenAI-Key hinzugefügt werden. Auch dies ist nur hier notwendig, nicht auf dem Server.
+
+==== Login:
+
+Damit das Ausführen der `docker-compose.yml` funktioniert, muss sich zuerst über `docker login gitlab.dit.htwk-leipzig.de:5050` angemeldet werden. Dies kann über Zugangsdaten oder einen angelegten Access Token geschehen. Entsprechende Rechte dazu wurden vergeben. Siehe auch https://docs.gitlab.com/ee/user/packages/container_registry/authenticate_with_container_registry.html
+
+==== Docker Pull:
+
+Um die neuesten Container aus unserem Projekt zu ziehen, muss nun `docker-compose pull` im selben Ordner ausgeführt werden, in dem auch die `docker-compose.yml` liegt.
+
+==== Docker-compose:
+
+Die `docker-compose.yml` Datei muss über `docker compose up -d` ausgeführt werden.
+
+Nachdem dies gestartet wurde, kann über `http://localhost:3000/` im Browser auf den neuesten Stand der Software zugegriffen werden.
+
+Unter https://dcnm-stellen.imn.htwk-leipzig.de kann (wenn im Hochschulnetz oder per VPN verbunden) auch der derzeitige Stand unserer Software angeschaut werden (siehe 3.1).
+
+==== Testen der Funktionalitäten:
+
+Sobald die Container laufen, kann per `docker-compose exec -it backend sh` der Backend-Container „benutzt“ werden.
+
+==== Vorab:
+
+Um hier besser testen zu können, empfehlen wir die Installation eines Texteditors, hier Nano:
+
+`apt-get install -y nano`
+
+Zusätzlich müssen zum Funktionieren der Komponenten entsprechende Einträge in der Datenbank vermerkt werden.
+
+Dazu per `docker-compose exec -it mysql sh` auf den MySQL-Container wechseln. Dann `mysql -p` in der Container-Shell eingeben und das Passwort `stellenboerse` nutzen. Danach folgenden Befehl eingeben, um einen Eintrag zu erstellen:
+
+```sql
+USE DATABASE stellenboerse;
+INSERT INTO location (Street, HouseNumber, PostalCode, City, created_at) VALUES ('Science Avenue', 101, '90001', 'Science City', NOW());
+INSERT INTO employer (Name, Website, Email) VALUES ('UFZ', 'https://www.ufz.de/index.php?de=34276', 'info@ufz.de');
+```
+
+Danach den MySQL-Container wieder verlassen. Falls noch nicht geschehen, wieder zum Backend-Container wechseln mit `docker-compose exec -it backend sh`.
+
+Damit die E-Mail-Validierungskomponente auf eine eigene, testbare Adresse geändert werden kann, muss diese in einer Datei angepasst werden. Dazu im Backend-Container mit `cd dist/validation` in den Ordner wechseln und per
+
+`sed -i 's/max.mager@stud.htwk-leipzig.de/mymail@test.de/g' validationEmail.js`
+
+Dabei `mymail@test.de` durch die eigene Adresse ersetzen, auf der getestet werden soll.
+
+==== Scraper, Crawler, KI und Validations-Komponente
+
+Beachte: Die Schritte in `Vorab` sind wichtig für das Testen der folgenden Komponenten.
+
+Um das Zusammenspiel dieser vier Komponenten zu testen, folgen Sie diesen Schritten:
+
+1. In dem bereits offenen Terminalfenster im Backend-Container zu `dist/Email` wechseln und `node processEmail.js` ausführen.
+2. Ein neues Terminalfenster öffnen, wieder auf den Backend-Container in die Shell wechseln. Zu `dist/Webscraper/` wechseln und `MODE=serial node crawlerController.js` ausführen.
+
+Effekt: Crawler und Scraper extrahieren die einzelnen Stellenanzeigen und leiten diese an die KI weiter. Die KI extrahiert Zielattribute aus diesen Stellen und speichert diese in der Datenbank. Daraufhin beginnt der Validationsprozess und es wird eine E-Mail an die hinterlegte Adresse gesendet. Wenn eine Stellenanzeige nicht korrekt extrahiert wurde, kann mit einem Antworten und Bearbeiten der Mail die entsprechende Stelle aktualisiert werden. Wenn der Befehl danach ausgeführt wird, gibt es keine Reaktion mehr, da die Stellen schon gecrawlt wurden. Um es erneut auszuführen, müsste man die Websites aus der Datenbank entfernen oder auf eine Änderung bei einer der UFZ Stellen warten.
+
+==== Frontend
+
+Die Änderungen, die durch das obere Kapitel umgesetzt wurden, können nun unter http://localhost:3000/ betrachtet werden. Per blauem Button lässt sich das Ganze alphabetisch sortieren. Per Klick auf eine Stelle öffnet sich eine Detailansicht. Hierin können der automatisiert extrahierte Titel sowie die Beschreibung betrachtet werden und der Link zur originalen Stelle kann angeklickt werden.
+
+==== Links zu den Dateien:
+
+.gitlab-ci.yml:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/.gitlab-ci.yml
+
+dazugehörige Pipelines:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/tree/main/Build
+
+==== Dockerfiles:
+
+Frontend:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/Frontend/Dockerfile
+
+Backend:
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Source/DCNMJobPortal/Backend/Dockerfile
+
+=== 3.3 GitLab Action
+
+Unter https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Build/release.yml?ref_type=heads ist die aktuelle Release-Pipeline zu sehen. Sobald ein Merge auf den main-Branch erfolgt, wird diese getriggert und ausgeführt. Alle anderen Pipelines (außer der Merge Request Build Pipeline und der Test Pipeline, welche nur auf offene MRs reagiert) werden derzeit ebenfalls auf ein Merge-Event auf den main ausgeführt.
+
+
+== 4. Projektinformationen
+
+=== 4.1 Problemdefinition und Produktvision
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-3:-Synthese/Ausf%C3%BChrliche-Problemdefinition[Nachvollziehbare Problemdefinition]
+- Die aktuelle Produktvision: Akademiker Paare können in die Region Mitteldeutschland kommen und gemeinsam Stellen in der Wissenschaft finden.
+
+=== 4.2 Design-Thinking-Prototypen
+Die Prototypen bieten die Grundlage zur Implementierung des Projekts, wobei einzelne Punkte nach einem Gespräch mit Herrn Schaefer/Prof. Both angepasst wurden, 
+welche https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design%20Thinking/Schritt-6:-Testen[hier]
+festgehalten wurden.
+
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Darstellungs-Prototyp[Darstellungs Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Eingabemaske-Prototyp[Eingabemaske Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Pull-Ansatz-Prototyp[Pull Ansatz Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Suche-Prototyp[Suche Prototyp]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/Schritt-5:-Prototyping/Webcrawler[Webcrawler]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design-Thinking/MVP-Definition[Webcrawler Erweitert]
+
+Der https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Design%20Thinking/MVP%20Definition[MVP] fasst diese Prototypen nochmal zusammen.
+
+=== 4.3 Erfüllte Anforderungen
+
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/95
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/98
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/230
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/233
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/269
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/270
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/276
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/277
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/279
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/280
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/281
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/282
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/283
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/290
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/299 
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/330
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/331
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/355
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/357
+
+== 5. Besondere Aktivitäten/Beiträge
+Es gibt bestimmte Aktivitäten, die nicht als eigenständige Issues erfasst wurden, sondern stattdessen als Zeiten bei den dazugehörigen Tickets notiert wurden. Dazu zählen Aufgaben wie Unterstützung beim Entwicklungsprozess, Refinements für die Tickets oder Code Reviews.
+
+Die Refinements wurden hauptsächlich vom QA-Team durchgeführt, insbesondere von Junyu und Max, aber auch von Vladi, falls keiner von beiden verfügbar war. Mahmod hat auch mit dem Testen der merge requests ausgeholfen. Max und Vladi haben ebenfalls viel Unterstützung bei der Bearbeitung der Tickets geleistet, was einen entsprechenden Zeitaufwand erforderte.
+
+Marie und Max haben die Abgabe vorbereitet und die Artefakte zusammengetragen und Beschreibungen ergänzt.
+
+Die folgenden Issues haben nachträglich mehr Aufwand erfordert als ursprünglich geplant:
+- #264 von Robert, müsste aufgestuft werden, da das Issue, auf dem der Unit-Test beruht, auch nicht das richtige Weight hatte (siehe Issue #93)
+- #330 von Robert hat wegen Fixing von Issue #98 und Unit-Test-Fixing ungefähr das doppelte der Zeit in Anspruch genommen (siehe Time tracking report)
+- #98 von Robert und Thorben. Die Gewichtung müsste höher sein da das Ticket einen Umbau an der Datenbank sowie am Webcrawler erforderte. Außerdem musste es 2 mal gemacht werden da erst nach Abschluss mitgeteilt wurde, dass das Speichern, Vergleichen etc. nun über die DB laufen soll.
+- #290 von Lâm. Grund dafür ist, dass das Korrigieren und Überprüfen von ESLint Fehlern viel Zeit kostete und für den ganzen Code nachgeholt werden musste. Es kam auch immer mehr Arbeit hinzu durch MRs, die neu in den main gemerged wurden, bevor der MR von #290 durch war.
+
+Jeden zweiten Donnerstag schließen wir unseren internen 2 Wöchigen Sprint ab, wo wir unsere Ergebnisse dem Kunden vorstellen. Danach planen wir zusammen den nächsten Sprint. Dabei besprechen wir die Issues und erweitern diese um Untertasks. Nach dem Abschluss einer Abgabe führen wir unsere Retro durch, an der ebenfalls jeder teilnimmt. Diese Zeiten werden nicht getrackt, aber jeder im Team nimmt aktiv Teil und trägt zu einem guten Verständnis der Aufgaben bei.
+
+Um unsere Gedanken zu strukturieren, haben wir MURAL verwendet. Das benutzte Board haben wir im WIKI gesammelt exportiert unter https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/wikis/Allgemeines/MURAL[MURAL]. Die einzelnen Ausschnitte sind teilweise auch seperat exportiert.
+
+== 6. Projektleitdokumentation
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/roles_and_responsibilities.adoc[Roles and Responsibilities]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/project_description.adoc[Projektdescription]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/follow_up_register.adoc[Follow-up-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/challenge_register.adoc[Challenge-Register]
+- https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektleitdokumentation/health_register.adoc[Health-Register]
+
+== 7. Projektsteckbrief
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Projektsteckbrief_L2.md[Steckbrief]
+
+== 8. Projektvideo
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/issues/333#note_99862[Video]
+
+== 9. Projektposter
+https://gitlab.dit.htwk-leipzig.de/softwareprojekt/stellenboerse/-/blob/main/Poster_L2.pdf[Poster]
+
+== 10. SonarQube
+SonarQube ist bei uns im HTWK-Netzwerk unter http://141.57.11.6:9000[141.57.11.6:9000] erreichbar. 
+
+== 11. Storypoints Sprint3
+Wir nennen die Abgabe zum Sprint3, Abgabe3 so wird sie auch im Text weiter genannt. Unsere Sprints sind nur 2 Wochen lang. Daher haben wir für die Abgabe3, zwei Sprints durch geführt Sprint1 und Sprint2. (Sprint bezieht sich hier auf unsere internen 2 Wochen Sprints)
+
+Für Sprint1 haben wir folgdende Issues geschafft: #325, #279, #235, 296, #335, #328 #277, #233, #230, #234.
+Dies entspricht 42 Storypoints.
+
+Für Sprint2 haben wir folgende Issues geschafft: #242, #359, #365, #364, #295, #355, #297, #267, #326, #294, #327, #336, #265, #298, #264, #268, #358, #290, #331, #280, #281, #98, #330, #299, #282, #283, #357, #276, #270, #269, #405, #334, #337, #333, #332, #163.
+Dies entspricht 236 Storypoints.
+
+Damit wurde in beiden Sprints in der Abgabe3 278 Storypoints geschafft. 

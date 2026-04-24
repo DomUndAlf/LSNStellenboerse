@@ -1,0 +1,20 @@
+{
+  "jobTitle": "Administrator oder Administratorin Zentrale Systeme (w/m/d)",
+  "jobDescription": "Über die Hochschule Die HTWK Leipzig wurde 1992 gegründet und ist mit ihren über 6.000 Studierenden nicht nur die größte, sondern auch eine der führenden Hochschulen für Angewandte Wissenschaften im Freistaat Sachsen. Das Leitbild aufgreifend, verfolgt sie das Ziel, sich auf der Basis wissenschaftlicher, regionaler, internationaler und sozialer Vernetzung zu einer europäischen Spitzenhochschule für Angewandte Wissenschaften zu entwickeln. Das IT-Servicezentrum (ITSZ) ist der zentrale IT-Dienstleister der HTWK Leipzig. Das ITSZ betreibt die zentralen IT-Dienste und IT-Systeme zur Unterstützung von Lehre, Forschung und Verwaltung. Ihre Aufgaben",
+  "jobTasks": [
+    "Planung, Installation und Wartung der Windows-Netzwerk-Infrastruktur (Active Directory, File Service)",
+    "Administration (Konfiguration, Betrieb) von Active Directory,",
+    "Konzeption und Planung von Rollouts neuer Client- und Server-Betriebssysteme;",
+    "Administration von Windows-Client-Server-Applikationen",
+    "Konzeption und Planung windowsbasierter Client-Server-Applikationen,",
+    "Installation und Konfiguration;",
+    "Administration des Zeiterfassungs- und Zutrittswesens",
+    "Nutzerverwaltung und Berechtigungsvergabe,",
+    "Überwachung der Systeme auf Funktionsfähigkeit,",
+    "Beratung und Unterstützung der Anwender bzw. Anwenderinnen sowie",
+    "Administration von Office-Applikationen und Cloudprodukten."
+  ],
+  "applicationDeadline": "2024-11-26",
+  "language": "de",
+  "specialty": ["Nicht-wissenschaftliche Berufe"]
+}

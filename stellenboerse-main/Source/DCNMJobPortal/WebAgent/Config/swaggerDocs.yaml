@@ -1,0 +1,105 @@
+openapi: "3.1.0"
+info:
+  title: "WebAgent API"
+  version: "1.0.0"
+  description: "API for Webscraping service"
+servers:
+  - url: "http://localhost:4030"
+
+paths:
+  /webagent/serial/{empid}:
+    post:
+      summary: Start the serial crawler process
+      description: This endpoint starts the WebAgent in serial mode for a specific employee.
+      tags:
+        - Crawler Service
+      parameters:
+        - name: empid
+          in: path
+          required: true
+          description: Employee ID to start the crawler for
+          schema:
+            type: string
+      responses:
+        200:
+          description: Crawler started in serial mode successfully
+        400:
+          description: Invalid input data
+        500:
+          description: Server error
+
+  /webagent/parallel/{empid}:
+    post:
+      summary: Start the parallel crawler process
+      description: This endpoint starts the WebAgent in parallel mode for a specific employee.
+      tags:
+        - Crawler Service
+      parameters:
+        - name: empid
+          in: path
+          required: true
+          description: Employee ID to start the crawler for
+          schema:
+            type: string
+      responses:
+        200:
+          description: Crawler started in parallel mode successfully
+        400:
+          description: Invalid input data
+        500:
+          description: Server error
+
+  /webagent/scrapeAll:
+    post:
+      summary: Start the crawler process for all employers
+      description: This endpoint starts the WebAgent for all employers.
+      tags:
+        - Crawler Service
+      responses:
+        200:
+          description: Crawler started for all employers successfully
+        500:
+          description: Server error
+
+  /webagent/scrapeAllActive:
+    post:
+      summary: Start the crawler process for all active employers
+      description: This endpoint starts the WebAgent crawler process for all active employers. The scraping process can be executed either sequentially or in parallel.
+      tags:
+        - Crawler Service
+      requestBody:
+        description: Optional parameter to specify whether the scraping should run in parallel or serial mode.
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isParallel:
+                  type: boolean
+                  description: Set to true to enable parallel scraping. Defaults to false.
+                  example: true
+      responses:
+        200:
+          description: Crawler started for all active employers successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message indicating the crawler has started.
+                    example: "Scraping for all active employers started successfully"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: A message indicating an error occurred.
+                    example: "Internal Server Error!"
+

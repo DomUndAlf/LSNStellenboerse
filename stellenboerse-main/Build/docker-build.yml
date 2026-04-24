@@ -1,0 +1,107 @@
+stages:
+  - docker
+
+docker_build_frontend:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal/Frontend
+    - docker build --no-cache --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:frontend . 
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:frontend
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image
+
+docker_build_validation_website:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal/ValidationWebsite
+    - docker build --no-cache --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:validationWebsite .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:validationWebsite
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image
+
+docker_build_ai_service:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal
+    - docker build --no-cache -f AI_Service/Dockerfile --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:ai_service .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:ai_service
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image
+
+docker_build_database_handler:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal
+    - docker build --no-cache -f DatabaseHandler/Dockerfile --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:database_handler .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:database_handler
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image
+
+docker_build_web_agent:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal
+    - docker build --no-cache -f WebAgent/Dockerfile --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:web_agent .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:web_agent
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - fdit
+
+docker_build_validation:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal
+    - docker build --no-cache -f Validation/Dockerfile --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:validation .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:validation
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image
+
+docker_build_scheduler:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin gitlab.dit.htwk-leipzig.de:5050
+    - cd Source/DCNMJobPortal
+    - docker build --no-cache -f SchedulerService/Dockerfile --build-arg PERSONAL_ACCESS_TOKEN=$PERSONAL_CI_TOKEN_LW -t gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:schedulerService .
+    - docker push gitlab.dit.htwk-leipzig.de:5050/softwareprojekt/stellenboerse:schedulerService
+  rules:
+   - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - image

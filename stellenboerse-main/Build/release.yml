@@ -1,0 +1,27 @@
+stages:
+  - release
+
+variables:
+  SSH_PASSWORD: "$SERVER_PW"
+  SSH_HOST: "141.57.11.6"
+  SSH_USER: "stud-fim"
+  COMPOSE_FILE: "Build/docker-compose.yml"
+  DEST_PATH_COMPOSE: "/home/stud-fim/docker-compose.yml"
+  ENV_FILE: "Source/DCNMJobPortal/.env.global"
+  DEST_PATH_ENV: "/home/stud-fim/.env"
+
+deploy_server:
+  stage: release
+  before_script:
+    - which sshpass || ( apt-get update && apt-get install -y sshpass )
+  script:
+    - sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no $COMPOSE_FILE $SSH_USER@$SSH_HOST:$DEST_PATH_COMPOSE
+    - sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no Build/nginx.conf $SSH_USER@$SSH_HOST:/home/stud-fim/nginx.conf
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "echo $PERSONAL_CI_TOKEN_LW | podman login gitlab.dit.htwk-leipzig.de:5050 -u louis.westerheide --password-stdin"
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "podman-compose pull"
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "podman image prune -f"    
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "podman-compose up -d --force-recreate"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "release"
+  tags:
+    - fdit

@@ -1,0 +1,119 @@
+{
+  "title": {
+    "location": "Location",
+    "employer": "Employer",
+    "deadline": "Deadline",
+    "language": "Language",
+    "specialty": "Specialty"
+  },
+
+  "disclaimer": {
+    "title": "Notice",
+    "aiContent": "AI-processed content. Only the",
+    "originalAd": "original job posting",
+    "liability": "is legally binding. No guarantee for the accuracy of information.",
+    "externalLinkNotice": "Clicking links in this window will take you away from our website."
+  },
+
+  "contact": {
+    "info": "Contact Information",
+    "goToAd": "Go to Job Ad",
+    "employer": "Employer",
+    "contact": "Contact",
+    "contactPerson": "Contact Person",
+    "email": "Email",
+    "link": "Link to Original Ad",
+    "location": "Job Location",
+    "addressTBA": "Exact address to be announced"
+  },
+  "description": {
+    "origin": "Go To Original Website",
+    "requirements": "Requirements",
+    "benefits": "Benefits",
+    "moreInfo": "More Info",
+    "tasks": "Tasks / Key Responsibilities"
+  },
+  "jobListFrame": {
+    "ads": "Career Portal Central Germany",
+    "adsFound": "jobs found",
+    "language": "EN",
+    "noJobsFound": "No Jobs Found",
+    "serverError": "Internal Server Error",
+    "loading": "Loading...",
+    "noJobsFoundFIlter": "No jobs found with applied filters"
+  },
+  "jobListItems": {
+    "deadline": "Application Deadline:",
+    "created": "Date of Creation: ",
+    "location": "Location",
+    "employer": "Employer",
+    "language": "Language",
+    "creation": "Date of Creation",
+    "dead": "Application Deadline"
+  },
+  "specialtys": {
+    "Geistes- und Sozialwissenschaften": "Humanities and Social Sciences",
+    "Ingenieurwissenschaften": "Engineering Sciences",
+    "Kultur, Kunst, Musik": "Culture, Arts, and Music",
+    "Medizin, Gesundheit, Psychologie": "Medicine, Health, and Psychology",
+    "MINT": "MINT",
+    "Rechtswissenschaften": "Law and Legal Studies",
+    "Wirtschaftswissenschaften": "Economics and Business Studies",
+    "Nicht-wissenschaftliche Berufe": "Non-academic Professions",
+    "Andere": "Other"
+  },
+  "searchBar": {
+    "search": "Search",
+    "filter": "Filter",
+    "open": "open",
+    "close": "close",
+    "language": "Language",
+    "pick": "Choose...",
+    "de": "German",
+    "en": "English",
+    "distance": "Distance",
+    "specialty": "Specialty",
+    "socialScience": "Humanities and Social Sciences",
+    "engineering": "Engineering Sciences",
+    "culture": "Culture, Arts, and Music",
+    "health": "Medicine, Health, and Psychology",
+    "mint": "STEM (Science, Technology, Engineering, Mathematics)",
+    "law": "Law and Legal Studies",
+    "economics": "Economics and Business Studies",
+    "nonAcademic": "Non-academic Professions",
+    "other": "Other",
+    "sort": "Sort by",
+    "createdDate": "Creation Date",
+    "deadline": "Application Deadline",
+    "actFilter": "Active Filters",
+    "buzzword": "Search...",
+    "employer": "Employer",
+    "applicationDateASC": "Application deadline ascending",
+    "applicationDateDESC": "Application deadline descending",
+    "releaseDateASC": "Release date ascending",
+    "releaseDateDESC": "Release date descending"
+  },
+  "filterEmployer": {
+    "searchForEmployer": "Search for employer...",
+    "showAll": "show all",
+    "employer": "Employer",
+    "resetSelection": "Reset selection",
+    "resetAll": "Reset all"
+  },
+  "toast": {
+    "searchTermAdded": "Search term added",
+    "searchTermRemoved": "Search term removed",
+    "specialtyChanged": "Specialty changed",
+    "specialtyRemoved": "Specialty removed",
+    "languageChanged": "Language changed",
+    "languageRemoved": "Language removed",
+    "employerAdded": "Employer added",
+    "employerRemoved": "Employer removed",
+    "sortChanged": "Sort changed",
+    "filterApplied": "Filter applied",
+    "filtersChanged": "Filters changed",
+    "filtersCleared": "All filters removed",
+    "jobFound": "job found",
+    "jobsFound": "jobs found"
+  }
+}

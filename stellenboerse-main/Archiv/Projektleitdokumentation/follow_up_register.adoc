@@ -1,0 +1,38 @@
+== Follow up register
+
+Das Follow up Register wird durch das Projektmanagement gepflegt.
+
+Im Follow up register werden Ereignisse aufgezeichnet, die den
+Projektverlauf entscheidend beinflussen können. Erkannte Risiken werden
+aufgezeichnet und Lösungswege und Verantwortliche benannt. Dies dient
+dem Lernen aus Erfahrung.
+
+from P3.Express:
+
+We should manage risks, issues, and change requests proactively. When
+you identify a new item, you should record it in the Follow-Up Register
+immediately. Then, assign its follow-up activities to a custodian (one
+of the team members) and start planning responses for the item. You must
+be continuously in contact with team members and other stakeholders to
+identify risks and issues.
+
+Das betrifft alle im Issueregister identifizierten Risiken und Änderungen.
+
+[cols=",,,,,,,",options="header",]
+|===
+|Cause |Effect |Impact |Response |Custodian |Identification (Date)
+|Occurence (Date) |Closure (Date)
+
+| Darauf verlassen, dass die Sekretariate spontan zu Interviews zur Verfügung stehen.|Meeting am 02.05 nicht genutzt, da ursprünglich Interviews geplant waren.| Fehlende Zeit welche für die Abnahme des Kundens jeglichen Puffer entfernt hat.| Interview Termine außerhalb der Meeting Zeiten geplant und flexibilität angeboten, damit die Sekretariate leichter Zeit für uns haben.  | Max Mager |02.05.2024 |02.05.2024 | 28.05.2024
+
+|Aufsplitten der Termine, damit klar wird, dass wir Feedback von Prof. Both am Anfang wollen, welches er aber nicht als so verstanden hat. |Er kam nicht zum Beginn des Meetings, wodurch es nahezu zu einem Terminkonflikt kam mit dem Projektsponsor. | Es war keine Zeit zur Aufarbeitung des Feedbacks mehr vorhanden, bevor der Projektsponsor kam.| Keine Aufsplittung der Termine mehr, sondern stattdessen die gewünschte Zeit in den Titel schreiben. |Max Mager |14.05.2024 |14.05.2024 | 21.05.2024
+
+|Viele voneinander abhängige Tickets, die einander blockiert haben. |Leerlauf und Stress gegen Sprintende alles rechtzeitig zu beenden. |Nicht mehr so viel Zeit den Code ausgiebig zu reviewen und Stress für das Team. |Bessere Organisation, also weniger voneinander abhängige Tickets und getrennte Strukturen. |Max Mager |  07.06.2024 |21.05.2024 | 11.06.2024
+
+|Viel Zeit für Tests benötigt. |Keine Zeit mehr für andere Issues, die zum MVP gehören. |Der MVP kann nicht mehr in vollem Umfang erfüllt werden. |Abstimmung mit Projektsponsor zur Verkleinerung des MVPs. |Max Mager |15.06.2024 |15.06.2024 | 25.06.2024
+
+|Gestartet zu Programmieren ohne vollständigen Architektur-Plan. |Alle Services im Backend liegen zusammen.| Nicht sauber getrennt, dadurch anfällig für Ausfälle und schlechter weiter zu entwickeln. |Umstrukturierung in Semesterpause. |Max Mager |20.06.2024 |20.06.2024 | open
+
+| | | | | | | |
+
+|===

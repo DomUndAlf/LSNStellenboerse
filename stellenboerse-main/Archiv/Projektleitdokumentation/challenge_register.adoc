@@ -1,0 +1,83 @@
+== Challenge Register
+
+Jedes Teammitglied kann ein Challenge erzeugen.
+
+Es gibt 3 Arten von Challenges:
+
+. Änderungsantrag/ request for Change Ein Vorschlag zur Änderung einer
+Baseline. z.B Der Benutzervertreter möchte die Kapazität eines Produkts
+von 100 auf 150 Anwender erhöhen. -> ist immer mit den Stakeholdern
+abzustimmen und zu dokumentieren.
+. Spezifikationsabweichung / off-specification Ein im Rahmen des
+projekts zu erfüllende Anforderung, die derzeit nicht (bzw.
+voraussichtlich nicht) erfüllt wird. z.B. Mitteilung eines Lieferanten,
+dass er ein Produkt nicht liefern kann.
+. Problem/Bedenken Sonstiges Issue, dessen Lösung oder Eskalation
+Aufgabe des Projekmanagements ist. z.B. Mitteilung eines Teammitglieds,
+dass Erkrankung vorliegt und Fertigstellung verzögert wird.
+
+Nachdem ein Issue erkannt und erfasst wurde, muss in einem
+kontrollierten Prozess bewertet und entschieden werden, wie darauf
+reagiert wird.
+
+Isuses sind: Änderungen in Roles and Responsibilities, New Risks,
+Änderungen der Produktvision und RoadMaps.
+
+[cols=",,,,,,,,",options="header",]
+|===
+|Beschreibung |Identifikation |Wirkung auf |Dringlichkeit/Schweregrad
+|aufgetreten am |erstellt durch |Reaktion |Verantwortlicher |Abschluss
+am
+
+ |Louis ist für kürzeren Zeitraum nicht vor Ort |Bedenken |Design Thinking |mittel | 14.05.2024 | Max Mager
+ |Zusammenfassung von Meetings und Asynchrone Aufgaben weiterleiten |Louis Westerheide | 27.05.2024
+
+ |Javascript für viele unbekannt |Problem |Team |dringend |16.05.2024 |Max Mager
+ |Material zur Verfügung gestellt |Max Mager |offen
+
+ |Abgaben vorbereiten Verantwortung hinzugefügt 
+ |Spezifikationsabweichung |Team |leicht | 18.05.2024|Max Mager 
+ |Roles/Responsibilieties geändert |Marie Schwabe  | 18.05.2024
+
+ |GitLab Wartungsarbeiten |Problem |Sprintabgabe |mittel |25.05.2024 |Marie Schwabe 
+ |Davor und danach weiter arbeiten |Team |25.05.2024
+
+ |Mahmod für kürzeren Zeitraum nicht da |Bedenken |Frontend |mittel |20.05.2024 |Marie Schwabe 
+ |Nacharbeitung und Integration |Mahmod Qobty |24.05.2024
+
+ |Marie für kürzeren Zeitraum nicht da |Bedenken |Sprint 1 Abnahme |mittel |27.05.2024 |Marie Schwabe 
+ |Vorbereitung auf Fehlen |Marie Schwabe |31.05.2024
+
+ |Gitlab runner verfügten nicht über den service DinD (Docker in Docker) |Spezifikationsabweichung |DevOps |dringend |30.05.2024 |Marie Schwabe
+ |Louis schrieb Email an Herr Geilhufe |Louis Westerheide |01.06.2024
+
+ |Rollen angepasst, mehr Leute ins Backend |Bedenken |Team |leicht |04.06.2024 |Marie Schwabe 
+ |Roles/Responsibilieties geändert | Marie Schwabe |04.06.2024
+
+ |GitLab zeigt Ausfälle bei hoher Auslastung |Spezifikationsabweichung |Team/Produkt |mittel | 05.06.2024 |Marie Schwabe
+ |Verantwortlichen Bescheid geben |Team |25.06.2024
+
+ |GitLab runner 2 Tage vor Abgabe nicht ausführbar |Spezifikationsabweichung |Produkt/Abnahme |dringlich |11.06.2024 |Louis Westerheide
+ |Herr Kresse informiert |Louis Westerheide |12.06.2024
+
+ |KI Tests können nicht zu 100% richtig sein |Bedenken |QA |mittel |12.06.2024 |Max Mager |Für derartige Tickets in Zukunft Akzeptanzschwelle mit angeben, welche erreicht werden soll | Max Mager |12.06.2024
+
+ |Rollen angepasst, mehr Leute bei der Qualitätssicherung |Bedenken |Team |leicht |04.06.2024 |Max Mager 
+ |Roles/Responsibilieties geändert | Max Mager |04.06.2024
+
+ |MVP nicht in gegebener Zeit umsetzbar |Problem |Team/MVP |dringlich |25.06.2024 |Marie Schwabe |Mit Herrn Schaefer gesprochen und Umfang des MVPs verkleinert |Max Mager |25.06.2024
+
+ |Erneute GitLab Ausfälle durch unangekündigte Warnung | Spezifikationsabweichung | Team/Abnahme | dringlich| 10.07.2024 | Max Mager| Ausfall im Team kommuniziert | Max Mager| 10.07.2024
+
+ |Abhängige Tickets für Abgabe | Bedenken | Team/Abnahme | dringlich | 05.07.2024 | Max Mager | Person bestimmen welche Überblick über Tickets behält und diese schnell zusammenfügen kann | Batbuyan Buyandelger | 10.07.2024
+
+// |Änderung der API |Spezifikationsabweichung |Produkt |mittel |27.4.23
+// |hans Mustermann |Ticket erstellt |Hans Mustermann |28.4.23
+// |Responsibility geändert zu Verantworlich für Website
+// |Spezifikationsabweichung |Team |leicht |25.4.23 |Helga Musterfrau
+// |Roles/Responsibilieties geändert |Helge Musterfrau |27.4.23
+
+
+| | | | | | | | |
+| | | | | | | | |
+|===

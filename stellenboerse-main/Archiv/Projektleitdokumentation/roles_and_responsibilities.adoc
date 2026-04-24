@@ -1,0 +1,30 @@
+== Roles and Responsibilities
+
+Dieses Dokument wird durch das Projekmanagement gepflegt. Jede
+Änderung/Erweiterung ist ein Änderungsantrag und muss im Issue-Register
+vermerkt werden.
+
+Jedes Teammitglied bekommt eine Rolle zugewiesen und
+Verantwortlichkeiten.
+
+Das Vernachlässigen von Verantwortlichkeiten stellt ein Risiko dar, und
+sollte im Follow-Up-Register behandelt werden. Tritt ein solches Risiko
+ein ist ein Vermerk im Issue-Register zu führen.
+
+[cols=",,",options="header",]
+|===
+|Teammitglied |Rolle |Verantwortlichkeiten
+|Thorben Dirk Stehling | Entwickler| Backend
+|Dominique Fischer | Entwickler| Frontend
+|Batbuyan Buyandelger | Entwickler| Backend
+|Robert Hobelsberger| Entwickler| Backend
+|Marie Schwabe| Entwickler | Backend, Abgaben vorbereiten
+|Artem Zakharevych| Entwickler | Frontend
+|Ilyass Essar Rhini | Entwickler | Backend
+|Mahmod Qobty (Mahamid) | Entwickler | Backend, Qualitätssicherung
+|Louis Westerheide | Entwickler| Backend, DevOps
+|Lam Nguyen | Entwickler | Frontend
+|Junyu Guo | Qualitätssicherungleiterin | Qualitätssicherung
+|Max Mager | Projektleitung | Produktowner, Organisation im Team, Qualitätssicherung, Abgaben vorbereiten
+|Vladislav Antonov | Projektleitung | Softwarearchitektur, Organisation im Team, DevOps
+|===

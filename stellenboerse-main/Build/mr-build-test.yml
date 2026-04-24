@@ -1,0 +1,114 @@
+stages:
+  - build-test
+
+build_frontend_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building Frontend"
+    - cd Source/DCNMJobPortal/Frontend
+    - npm ci --omit=dev
+    - CI=false npm run build
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_validation_website_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building ValidationWebsite"
+    - cd Source/DCNMJobPortal/ValidationWebsite
+    - npm install
+    - CI=false npm run build
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_webAgent_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building WebAgent"
+    - cd Source/DCNMJobPortal/WebAgent
+    - npm ci --omit=dev
+    - npx tsc
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_validation_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building Validation"
+    - cd Source/DCNMJobPortal/Validation
+    - npm ci --omit=dev
+    - npx tsc
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_dbHandler_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building DBHandler"
+    - cd Source/DCNMJobPortal/DatabaseHandler
+    - npm ci --omit=dev
+    - npx tsc
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_ai_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building AI"
+    - cd Source/DCNMJobPortal/AI_Service
+    - npm ci --omit=dev
+    - npx tsc
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
+
+build_scheduler_test:
+  stage: build-test
+  image: node:21
+  script:
+    - echo "Building Scheduler"
+    - cd Source/DCNMJobPortal/SchedulerService
+    - npm ci --omit=dev
+    - npx tsc
+  rules: 
+    - if: $CI_COMMIT_BRANCH == "second-main"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  tags:
+    - image
